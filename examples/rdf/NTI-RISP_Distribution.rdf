@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dcat="http://www.w3.org/ns/dcat#"
+         xmlns:dct="http://purl.org/dc/terms/"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:foaf="http://xmlns.com/foaf/0.1/">
+
+  <dcat:Distribution rdf:about="http://datos.gob.es/catalogo/2332/SHP">
+    <dct:identifier>http://datos.gob.es/catalogo/2332/SHP</dct:identifier>
+    <dct:title>Distribución en formato ESRI Shapefile</dct:title>
+    <dct:format>
+      <dct:IMT>
+        <rdf:value>application/octet-stream</rdf:value>
+        <rdfs:label>SHP</rdfs:label>
+      </dct:IMT>
+    </dct:format>
+
+    <dct:relation>
+      <rdf:Description>
+        <rdfs:label xml:lang="es">AYUDA DESCARGA DE CARTOGRAFÍA VECTORIAL, formato Shapefile</rdfs:label>
+        <foaf:page rdf:resource="http://www.catastro.minhap.es/ayuda/lang/castellano/ayuda_descarga_shape.htm"/>
+      </rdf:Description>
+    </dct:relation>
+
+    <dcat:accessURL rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.sedecatastro.gob.es/CYCTitular/OVCAccTit .aspx?Dest=19</dcat:accessURL>
+    <dcat:byteSize rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">31457280</dcat:byteSize>
+  </dcat:Distribution>
+
+</rdf:RDF>

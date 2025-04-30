@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dcat="http://www.w3.org/ns/dcat#"
+         xmlns:dct="http://purl.org/dc/terms/"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:foaf="http://xmlns.com/foaf/0.1/">
+
+  <dcat:Catalog rdf:about="http://datos.gob.es/catalogo">
+    <dct:title xml:lang="es">datos.gob.es</dct:title>
+    <dct:description xml:lang="es">Catálogo de Información Pública de la Administración General del Estado</dct:description>
+    <dct:identifier>http://datos.gob.es/catalogo</dct:identifier>
+    <dct:extent>
+      <dct:SizeOrDuration>
+        <rdf:value rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">850</rdf:value>
+        <rdfs:label xml:lang="es">850 documentos o recursos de información</rdfs:label>
+      </dct:SizeOrDuration>
+    </dct:extent>
+
+    <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2011-11-27</dct:issued>
+    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-01-10</dct:modified>
+    <dc:language>es</dc:language>
+    <dct:publisher rdf:resource="http://datos.gob.es/recurso/sector-publico/org/Organismo/E00004401"/>
+    <dct:license rdf:resource="http://datos.gob.es/datos/?q=aviso-legal"/>
+    <dct:spatial rdf:resource="http://datos.gob.es/recurso/sector-publico/territorio/Pais/España"/>
+    <dcat:themeTaxonomy rdf:resource="http://datos.gob.es/kos/sector-publico/sector"/>
+    <foaf:homepage rdf:resource="http://datos.gob.es/datos/"/>
+    <dcat:dataset rdf:resource="http://datos.gob.es/catalogo/2332"/>
+  </dcat:Catalog>
+
+</rdf:RDF>

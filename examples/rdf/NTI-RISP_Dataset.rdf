@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dcat="http://www.w3.org/ns/dcat#"
+         xmlns:dc="http://purl.org/dc/terms/"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:dc11="http://purl.org/dc/elements/1.1/"
+         xmlns:time="http://www.w3.org/2006/time#">
+
+  <dcat:Dataset rdf:about="http://datos.gob.es/catalogo/2332">
+    <dc:title xml:lang="es">Información catastral gráfica</dc:title>
+    <dc:description xml:lang="es">La Dirección General del Catastro le ofrece, de forma totalmente gratuita, a través del Servicio de descarga de cartografía vectorial (formato Shapefile), la cartografía catastral en formato vectorial. Reúne información de las características de los inmuebles, tanto rústicos como urbanos, localizados en el ámbito territorial dónde ejerce sus competencias.</dc:description>
+    <dcat:theme rdf:resource="http://datos.gob.es/kos/sector-publico/sector/vivienda"/>
+    <dcat:keyword>catastro</dcat:keyword>
+    <dcat:keyword>mapas</dcat:keyword>
+    <dcat:keyword>cartografía</dcat:keyword>
+    <dcat:keyword>inmuebles</dcat:keyword>
+
+    <dc:accrualPeriodicity>
+      <dc:Frequency>
+        <rdf:value rdf:datatype="http://www.w3.org/2001/XMLSchema#timePeriod">P0Y3M0DT0H0M0S</rdf:value>
+        <rdfs:label>Cada trimestre</rdfs:label>
+      </dc:Frequency>
+    </dc:accrualPeriodicity>
+
+    <dc:publisher rdf:resource="http://datos.gob.es/recurso/sector-publico/org/Organismo/E00004401"/>
+    <dc:identifier>http://datos.gob.es/catalogo/2332</dc:identifier>
+    <dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2012-12-26</dc:issued>
+    <dc:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2012-12-26</dc:modified>
+    <dc11:language>es</dc11:language>
+    <dc11:language>ga</dc11:language>
+    <dc11:language>en</dc11:language>
+    <dc11:language>ca</dc11:language>
+    <dc:license rdf:resource="http://www.minhap.gob.es/Documentacion/Publico/NormativaDoctrina/Catastro/Acceso%20a%20la%20informacion%20catastral/res_230311.pdf"/>
+    <dc:spatial rdf:resource="http://datos.gob.es/recurso/sector-publico/territorio/Pais/España"/>
+    <dc:references rdf:resource="http://www1.sedecatastro.gob.es"/>
+
+    <dc:temporal>
+      <dc:PeriodOfTime>
+        <rdf:type rdf:resource="http://www.w3.org/2006/time#Interval"/>
+        <time:hasBeginning>
+          <time:Instant>
+            <time:inXSDDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2012-12-26</time:inXSDDateTime>
+          </time:Instant>
+        </time:hasBeginning>
+        <time:hasEnd>
+          <time:Instant>
+            <time:inXSDDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-03-26</time:inXSDDateTime>
+          </time:Instant>
+        </time:hasEnd>
+      </dc:PeriodOfTime>
+    </dc:temporal>
+
+    <dc:valid rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-03-26</dc:valid>
+    <dc:conformsTo rdf:resource="http://www.catastro.meh.es/documentos/res_241108.pdf"/>
+    <dc:conformsTo rdf:resource="http://www.catastro.meh.es/ayuda/legislacion/ovc/Resolucion%2012_7_2010_formularios_normalizados.pdf"/>
+    <dcat:distribution rdf:resource="http://datos.gob.es/catalogo/2332/SHP"/>
+    <dcat:distribution rdf:resource="http://datos.gob.es/catalogo/2332/ZIP"/>
+  </dcat:Dataset>
+
+</rdf:RDF>

@@ -1,0 +1,537 @@
+site_name: NTI-RISP
+site_url: https://datosgobes.github.io/NTI-RISP/   # Local: mkdocs serve -a 127.0.0.1:8088
+site_description: >-
+  Portal para la implementación del modelo de datos de acuerdo con el perfil de aplicación NTI-RISP.
+repo_name: datosgobes/NTI-RISP
+repo_url: https://github.com/datosgobes/NTI-RISP
+edit_uri: edit/main/docs/
+site_dir: dist
+
+validation:
+  absolute_links: ignore
+  unrecognized_links: ignore
+  anchors: ignore
+
+nav:
+  - Guía técnica NTI-RISP: index.md
+  - FAQ: faq.md
+  - Validación: validation.md
+  - Ejemplos de implementación: examples.md
+
+theme:
+  language: es
+  name: material
+  custom_dir: overrides
+  palette:
+    primary: 'white'
+    accent: 'red'
+  font:
+    text: Poppins
+    code: Roboto Mono
+  icon:
+      repo: fontawesome/brands/github
+      logo: material/file-document-arrow-right
+  logo: img/dge_logo_2025.svg
+  favicon: img/favicon.ico
+  features:
+    - content.action.edit
+    - content.action.view
+    - announce.dismiss
+    - navigation.top
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.path
+    - navigation.expand
+    - navigation.footer
+    - navigation.indexes
+    - navigation.prune
+    - search.suggest
+    - search.highlight
+    - toc.integrate
+    - toc.follow
+    - content.code.copy
+    - content.footnote.tooltips
+    - content.tooltips
+    - navigation.tracking
+    - content.code.select
+    - content.code.annotate
+
+markdown_extensions:
+  - toc:
+      permalink: "#"
+      toc_depth: 3 
+      baselevel: 2
+      separator: "_"
+  - admonition
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.arithmatex:
+      generic: true
+  - mdx_truly_sane_lists:
+      truly_sane: true
+      nested_indent: 2
+  - pymdownx.details
+  - codehilite
+  - footnotes
+  - abbr
+  - attr_list
+  - md_in_html
+  - tables
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.snippets:
+      auto_append:
+        - refs/docs/abbreviations.md
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      options:
+        custom_icons:
+          - overrides/.icons
+  - pymdownx.tasklist:
+        custom_checkbox: true
+
+extra_css: 
+  - assets/css/vendor/jquery-ui-1.14.1.min.css
+  - assets/css/style.css
+  - assets/css/codeblocks.css
+  - assets/css/header.css
+
+extra_javascript:
+  - https://viewer.diagrams.net/js/viewer-static.min.js
+  - assets/js/modules/drawio-reload.js
+  - assets/js/vendor/mermaid.min.js
+  - assets/js/vendor/jquery-ui-1.14.1.min.js
+  - assets/js/modules/codeblock-enhancement.js
+  - assets/js/modules/conventions.js
+  # Unnecessary for now
+  # - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
+  # - assets/js/modules/tablesort.js
+
+extra:
+  social:
+    - name: GitHub
+      icon: fontawesome/brands/github
+      link: https://github.com/datosgobes
+    - name: LinkedIn
+      icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/company/datos-gob-es
+    - name: X
+      icon: fontawesome/brands/x-twitter
+      link: https://x.com/datosgob
+    - name: datos.gob.es
+      icon: fontawesome/solid/globe
+      link: https://datos.gob.es
+  # consent:
+  #     title: Información importante sobre Cookies
+  #     description: >- 
+  #       En esta página web usamos cookies propias y de terceros con fines técnicos y de personalización para el funcionamiento del sitio web o la prestación de servicios expresamente solicitados por el usuario. No recaba ni cede datos de carácter personal de los usuarios sin su conocimiento. Sin embargo, puede contener enlaces a sitios web de terceros con políticas de privacidad ajenas a la de Datos.gob.es que usted podrá decidir si acepta o no cuando acceda a ellos. Encontrará más información sobre las cookies utilizadas en nuestra <a href="https://datos.gob.es/es/politica-de-cookies">Política de Cookies</a>
+  mkdocs_hooks:
+    pdf_source: refs/nti-risp
+    pdf_dest: download/pdf
+    shacl_source: shacl/{application_profile_version}
+    shacl_dest: releases/{application_profile_version}/shacl
+  version:
+    provider: mike
+  custom_homepage: 'https://datos.gob.es'
+  custom_homepage_name: 'datos.gob.es'
+  application_profile_version: 1.0.0
+  warning_banner:
+    es: "Advertencia: Nueva versión de la norma en fase de aprobación final: <a href=\"https://datosgobes.github.io/DCAT-AP-ES\">DCAT-AP-ES</a>"
+    en: "Warning: New version of the standard in final release: <a href=\"https://datosgobes.github.io/DCAT-AP-ES\">DCAT-AP-ES</a>"
+
+plugins:
+  - privacy
+  - search:
+      lang: es
+  # - i18n:
+  #     docs_structure: suffix
+  #     languages:
+  #       - locale: es
+  #         default: true
+  #         name: Español
+  #         build: true
+  #       - locale: en
+  #         name: English
+  #         build: true
+  #         nav:
+  #         - Guide for NTI-RISP implementation: index.md
+  #         - FAQ: faq.en.md
+  #         - Implementation examples: examples.en.md
+  #         #- NTI-RISP validation: validation.en.md
+  - mkdocstrings:
+      handlers:
+        python:
+          import:
+            - https://docs.python.org/3/objects.inv
+            - https://installer.readthedocs.io/en/stable/objects.inv
+          options:
+            show_bases: false
+            show_source: true
+            show_labels: false
+            show_root_heading: true
+  - git-revision-date-localized:
+      enable_creation_date: false
+  - redirects:
+      redirect_maps:
+        'old.md': 'index.md'
+        'nti-risp.md': 'index.md'
+        'ejemplos.md': 'examples.md'
+        'preguntas-frecuentes.md': 'faq.md'
+        'validacion.md': 'validation.md'
+        'validación.md': 'validation.md'
+        'mqa.md': 'validation.md'
+  - minify:
+      minify_html: true
+  - social:
+      cards_layout_options:
+        background_color: '#154481'
+  - git-committers:
+      repository: datosgobes/NTI-RISP
+      branch: main
+  # - enumerate-headings:
+  #     toc_depth: 1
+  #     strict: true
+  #     increment_across_pages: false
+  #     include:
+  #       - "*"        
+  #     exclude:
+  #       - examples.md
+  #       - changelog.md
+  - drawio:
+      viewer_js: "https://viewer.diagrams.net/js/viewer-static.min.js"
+      toolbar: true 
+      tooltips: true
+      edit: true
+      border: 1
+  - meta-descriptions
+watch:
+- refs/docs
+
+exclude_docs: |
+    /refs/*
+    /README.md
+    /**/README.md
+
+hooks:
+  - tools/mkdocs-hooks/dcat_ap_es.py
+
+dcatapes:
+  # Spanish
+  es:
+    draft: true
+    download_pdf: true
+    title: Guía técnica de implementación del modelo de metadatos de la NTI-RISP
+    base_url: 'https://github.com/datosgobes/NTI-RISP'
+    logos:
+      # Only 3 logos
+      - href: 'https://digital.gob.es/ministerio/organigrama_organos/SEDIA.html'
+        alt: 'Secretaría de Estado de Digitalización e Inteligencia Artificial'
+        src: '/NTI-RISP/img/sedia-red-es.jpg'
+      - href: 'https://datos.gob.es'
+        alt: 'datos.gob.es'
+        src: '/NTI-RISP/img/dge_logo_2025.svg'
+      - href: 'https://datos.gob.es/acerca-de-la-iniciativa-aporta'
+        alt: 'Iniciativa Aporta'
+        src: '/NTI-RISP/img/iniciativa_aporta.svg'
+    document_title: NTI-RISP 1.0.0
+    published_date: '2025-04-30'
+    published_date_human: '30 de abril de 2025'
+    details_summary: Más detalles sobre este documento
+    latest_published_version: 'https://datosgobes.github.io/NTI-RISP'
+    latest_editors_draft: 'https://github.com/datosgobes/NTI-RISP/releases/tag/1.0.0'
+    history: 
+      - name: Histórico de cambios
+        link: 'https://github.com/datosgobes/NTI-RISP/commits/'
+    editors:
+      - name: Equipo gestor de la plataforma datos.gob.es
+        org: Iniciativa Aporta
+        email: soporte@datos.gob.es
+    also_available:
+      enabled: true 
+      text: "Disponible la guía de aplicación oficial en formato"
+    feedback: 
+      title: GitHub NTI-RISP
+    feedback_links:
+      - link: https://github.com/datosgobes/NTI-RISP/pulls
+        text: Solicitudes de extracción (PR)
+      - link: https://github.com/datosgobes/NTI-RISP/issues/new/choose
+        text: Nueva incidencia (Issue)
+      - link: https://github.com/datosgobes/NTI-RISP/issues
+        text: Incidencias (Issues)
+      - link: https://github.com/datosgobes/NTI-RISP/discussions
+        text: Discusión
+    owners:
+      - name: Iniciativa de datos abiertos del Gobierno de España
+        link: 'https://datos.gob.es/'
+    period:
+      start:
+        value: "2013-03-04"
+        title: "Fecha de entrada en vigor de NTI-RISP"
+      end:
+        value: "Vigente" 
+        title: "Fecha de descontinuación o vigencia"
+    categories:
+      latest_published_version: Última versión publicada
+      latest_editors_draft: Último borrador del editor
+      history: Historial
+      editors: Editores
+      author: Autor
+      feedback: Retroalimentación
+      owners: Propietarios
+      period: "Período de vigencia"
+    copyright:
+      name: CC BY 4.0
+      link: https://creativecommons.org/licenses/by/4.0/
+      # Icons: https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/
+      icon: fontawesome/brands/creative-commons
+    
+    validator:
+      enabled: true
+      # https://github.com/ISAITB/validator-resources-dcat-ap/blob/master/resources/config.properties
+      base_url: https://www.itb.ec.europa.eu/shacl
+      api_action: api/validate
+      model: dcat-ap
+      version: v2.0Base0
+    converter:
+      base_url: https://www.easyrdf.org/converter
+      uri: http://njh.me/
+      output_formats: 
+        turtle: Turtle
+        jsonld: JSON-LD
+        rdfxml: RDF/XML
+        ntriples: N-Triples
+    codeblock_messages:
+      validate: Validar
+      click_to_validate: Haga clic para validar el bloque de código
+      not_connected: No conectado. Verifique la red.
+      page_not_found: 'Página solicitada no encontrada. [404]'
+      internal_server_error: 'Error interno del servidor [500].'
+      json_parse_failed: Error al analizar JSON solicitado.
+      timeout_error: Error de tiempo de espera.
+      ajax_aborted: Solicitud Ajax abortada.
+      uncaught_error: |
+        Error no detectado.
+      validation_result: Resultado de la validación DCAT-AP 2.1.1 Base
+      convert_to: Convertir a
+    conventions:
+      draft: false
+      download_pdf: true
+      title: Convenciones técnicas, semánticas y organizativas para la aplicación de NTI-RISP
+      document_title: NTI-RISP 1.0.0 – Convenciones
+      published_date: '2025-03-01'
+      published_date_human: '1 de marzo de 2025'
+      details_summary: Más detalles sobre este documento
+      latest_published_version: 'https://datosgobes.github.io/NTI-RISP'
+      latest_editors_draft: 'https://github.com/datosgobes/NTI-RISP/releases/tag/1.0.0'
+      history: 
+        - name: Histórico de cambios
+          link: 'https://github.com/datosgobes/NTI-RISP/commits/'
+      editors:
+        - name: Equipo gestor de la plataforma datos.gob.es
+          org: Iniciativa Aporta
+          link: https://datos.gob.es/acerca-de-la-iniciativa-aporta
+          email: soporte@datos.gob.es
+      author:
+        name: Equipo gestor de la plataforma datos.gob.es
+        org: Iniciativa Aporta
+        email: soporte@datos.gob.es
+      also_available:
+        enabled: true 
+        text: "Disponible también en formato"
+    buttons:
+      draft_label: 
+        label: "Versión en evolución"
+        tooltip: "Existe una versión en desarrollo de la norma en proceso de aprobación: DCAT-AP-ES. Se recomienda su uso"
+      download_pdf:
+        enabled: true
+        title: Descargar como PDF
+        href: 
+          index: https://datosgobes.github.io/NTI-RISP/download/pdf/guia_nti_pdf_reutilizacion_recursos_informacion_2aed.pdf
+          conventions: https://datosgobes.github.io/NTI-RISP/download/pdf/guia_nti_pdf_reutilizacion_recursos_informacion_2aed.pdf
+      badges:
+        must:
+          name: Obligatoria
+          title: Esta palabra, o los términos «REQUIERE» o «DEBE», significan que la convención es un requisito absoluto.
+        should: 
+          name: Recomendada
+          title: Esta palabra, o el término «DEBERÍA», significa que puede haber razones válidas en determinadas circunstancias para ignorar un punto concreto, pero deben comprenderse todas las implicaciones y sopesarse cuidadosamente antes de elegir un camino diferente.
+        may:
+          name: Opcional
+          title: Esta palabra, o el término «PUEDE», significan que un artículo es realmente opcional
+        technical: 
+          name: Técnica
+          title: Estas convenciones definen aspectos técnicos de implementación, incluyendo codificación, identificación de recursos y modelado de entidades. Son esenciales para garantizar la interoperabilidad técnica y la correcta interpretación de los metadatos.
+        organisational: 
+          name: Organizativa
+          title: Estas convenciones establecen reglas para la gestión y organización de catálogos, la federación de datos y la identificación de organismos. Proporcionan el marco de gobernanza necesario para una gestión efectiva de los metadatos.
+        semantic:
+          name: Semántica
+          title: Estas convenciones aseguran la coherencia en la descripción de los recursos, garantizan que los metadatos sean semánticamente precisos y consistentes.
+  # English
+  en:
+    draft: true
+    download_pdf: true
+    title: Technical guide for the implementation of the NTI-RISP metadata model
+    base_url: 'https://github.com/datosgobes/NTI-RISP'
+    logos:
+      # Only 3 logos
+      - href: 'https://digital.gob.es/ministerio/organigrama_organos/SEDIA.html'
+        alt: 'State secretariat for Digitization and Artificial intelligence'
+        src: '/NTI-RISP/img/sedia-red-es.jpg'
+      - href: 'https://datos.gob.es'
+        alt: 'datos.gob.es'
+        src: '/NTI-RISP/img/dge_logo_2025.svg'
+      - href: 'https://datos.gob.es/acerca-de-la-iniciativa-aporta'
+        alt: 'Aporta Initiative'
+        src: '/NTI-RISP/img/iniciativa_aporta.svg'
+    document_title: NTI-RISP 1.0.0
+    published_date: '2025-04-30'
+    published_date_human: '30 de abril de 2025'
+    details_summary: More details about this document
+    latest_published_version: 'https://datosgobes.github.io/NTI-RISP'
+    latest_editors_draft: 'https://github.com/datosgobes/NTI-RISP/releases/tag/1.0.0'
+    history: 
+      - name: Change History
+        link: 'https://github.com/datosgobes/NTI-RISP/commits/'
+    editors:
+      - name: datos.gob.es platform Management Team
+        org: Aporta Initiative
+        link: https://datos.gob.es/acerca-de-la-iniciativa-aporta
+        email: soporte@datos.gob.es
+    also_available:
+      enabled: true 
+      text: "Official application guide available in"
+    feedback: 
+      title: GitHub NTI-RISP
+    feedback_links:
+      - link: https://github.com/datosgobes/NTI-RISP/pulls
+        text: Pull Requests (PR)
+      - link: https://github.com/datosgobes/NTI-RISP/issues/new/choose
+        text: New Issue
+      - link: https://github.com/datosgobes/NTI-RISP/issues
+        text: Issues
+      - link: https://github.com/datosgobes/NTI-RISP/discussions
+        text: Discussion
+    owners:
+      - name: Spanish Government Open Data Initiative
+        link: 'https://datos.gob.es/'
+    period:
+      start:
+        value: "2013-03-04"
+        title: "Effective date of NTI-RISP"
+      end:
+        value: "Vigente"
+        title: "End of life or effective date"
+    categories:
+      latest_published_version: Latest Published Version
+      latest_editors_draft: Latest Editor's Draft
+      history: History
+      editors: Editors
+      author: Author
+      feedback: Feedback
+      owners: Owners
+      period: "Period of validity"
+    copyright:
+      name: CC BY 4.0
+      link: https://creativecommons.org/licenses/by/4.0/
+      # Icons: https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/
+      icon: fontawesome/brands/creative-commons
+    validator:
+      enabled: true
+      # https://github.com/ISAITB/validator-resources-dcat-ap/blob/master/resources/config.properties
+      base_url: https://www.itb.ec.europa.eu/shacl
+      api_action: api/validate
+      model: dcat-ap
+      version: v2.0Base0
+    converter:
+      base_url: https://www.easyrdf.org/converter
+      uri: http://njh.me/
+      output_formats: 
+        turtle: Turtle
+        jsonld: JSON-LD
+        rdfxml: RDF/XML
+        ntriples: N-Triples
+    codeblock_messages:
+      validate: Validate
+      click_to_validate: Click to validate the code block
+      not_connected: Not connected. Check the network.
+      page_not_found: 'Requested page not found. [404]'
+      internal_server_error: 'Internal Server Error [500].'
+      json_parse_failed: Failed to parse requested JSON.
+      timeout_error: Timeout error.
+      ajax_aborted: Ajax request aborted.
+      uncaught_error: |
+        Uncaught error.
+      validation_result: Validation result DCAT-AP 2.1.1 Basis
+      convert_to: Convert to
+    conventions:
+      draft: true
+      download_pdf: true
+      title: Technical, semantic, and organizational conventions for the application of NTI-RISP
+      document_title: NTI-RISP 1.0.0 - Conventions
+      published_date: '2025-03-01'
+      published_date_human: 'March 1, 2025'
+      details_summary: More details about this document
+      latest_published_version: 'https://datosgobes.github.io/NTI-RISP'
+      latest_editors_draft: 'https://github.com/datosgobes/NTI-RISP/releases/tag/1.0.0'
+      history: 
+        - name: Change History
+          link: 'https://github.com/datosgobes/NTI-RISP/commits/'
+      editors:
+        - name: Equipo gestor de la plataforma datos.gob.es
+          org: Iniciativa Aporta
+          link: https://datos.gob.es/acerca-de-la-iniciativa-aporta
+          email: soporte@datos.gob.es
+      author:
+        name: datos.gob.es platform Management Team
+        org: Aporta Initiative
+        email: soporte@datos.gob.es
+      also_available:
+        enabled: true 
+        text: "Also available in"
+    buttons:
+      draft_label: 
+        label: "Evolving version"
+        tooltip: "There is a developed version of the standard in the process of approval: DCAT-AP-ES. Its use is recommended"
+      download_pdf:
+        enabled: false
+        title: Download as PDF
+        href: 
+          index: https://datosgobes.github.io/NTI-RISP/download/pdf/guia_nti_pdf_reutilizacion_recursos_informacion_2aed.pdf
+          index: https://datosgobes.github.io/NTI-RISP/download/pdf/guia_nti_pdf_reutilizacion_recursos_informacion_2aed.pdf
+      badges:
+        must:
+          name: Mandatory
+          title: This word, or the terms "REQUIRED" or "SHALL", mean that the convention is an absolute requirement.
+        should: 
+          name: Recommended
+          title: This word, or the term "SHOULD", mean that there may exist valid reasons in particular circumstances to ignore a particular item, but the full implications must be understood and  carefully weighed before choosing a different course.
+        may:
+          name: Optional
+          title: This word, or the term "MAY", mean that an item is truly optional.
+        technical: 
+          name: Technical
+          title: These conventions define technical aspects of implementation, including encoding, resource identification, and entity modeling. They are essential for ensuring technical interoperability and correct interpretation of metadata.
+        organisational: 
+          name: Organisational
+          title: These conventions establish rules for the management and organization of catalogs, data federation, and the identification of organizations. They provide the necessary governance framework for effective metadata management.
+        semantic:
+          name: Semantic
+          title: These conventions ensure consistency in the description of resources, guaranteeing that metadata is semantically accurate and consistent.
+  # Add more languages here
+    
