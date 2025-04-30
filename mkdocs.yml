@@ -16,7 +16,7 @@ nav:
   - Guía técnica NTI-RISP: index.md
   - FAQ: faq.md
   - Validación: validation.md
-  - Ejemplos: examples.md
+  - Ejemplos de implementación: examples.md
 
 theme:
   language: es
@@ -44,8 +44,6 @@ theme:
     - navigation.expand
     - navigation.footer
     - navigation.indexes
-    - navigation.instant
-    - navigation.instant.progress
     - navigation.prune
     - search.suggest
     - search.highlight
@@ -153,8 +151,8 @@ extra:
   custom_homepage_name: 'datos.gob.es'
   application_profile_version: 1.0.0
   warning_banner:
-    es: "Advertencia: Esta guía está descontinuada. <a href=\"https://datosgobes.github.io/DCAT-AP-ES\">DCAT-AP-ES entrará en vigor en 2025</a>"
-    en: "Warning: This guide is deprecated. <a href=\"https://datosgobes.github.io/DCAT-AP-ES\">DCAT-AP-ES will come into force in 2025</a>, replacing the current NTI-RISP."
+    es: "Advertencia: Nueva versión de la norma en fase de aprobación final: <a href=\"https://datosgobes.github.io/DCAT-AP-ES\">DCAT-AP-ES</a>"
+    en: "Warning: New version of the standard in final release: <a href=\"https://datosgobes.github.io/DCAT-AP-ES\">DCAT-AP-ES</a>"
 
 plugins:
   - privacy
@@ -235,7 +233,7 @@ hooks:
 dcatapes:
   # Spanish
   es:
-    draft: false
+    draft: true
     download_pdf: true
     title: Guía técnica de implementación del modelo de metadatos de la NTI-RISP
     base_url: 'https://github.com/datosgobes/NTI-RISP'
@@ -349,7 +347,8 @@ dcatapes:
         text: "Disponible también en formato"
     buttons:
       draft_label: 
-        label: Borrador
+        label: "Versión en evolución"
+        tooltip: "Existe una versión en desarrollo de la norma en proceso de aprobación: DCAT-AP-ES. Se recomienda su uso"
       download_pdf:
         enabled: true
         title: Descargar como PDF
@@ -491,7 +490,8 @@ dcatapes:
         text: "Also available in"
     buttons:
       draft_label: 
-        label: Draft
+        label: "Evolving version"
+        tooltip: "There is a developed version of the standard in the process of approval: DCAT-AP-ES. Its use is recommended"
       download_pdf:
         enabled: false
         title: Download as PDF

@@ -17,7 +17,7 @@ Este enfoque estructurado de metadatos facilita la publicación de datos en form
     Es un **material únicamente complementario** y tiene como objetivo facilitar la implementación práctica del modelo de metadatos de la NTI-RISP de 2013, proporcionando referencias y ejemplos adicionales. Para cualquier interpretación normativa o implementación oficial, debe consultarse siempre la documentación legal vigente y las guías oficiales publicadas por el organismo competente.
 
 !!! danger "DCAT-AP-ES"
-    **[DCAT-AP-ES](https://datosgobes.github.io/DCAT-AP-ES) entrará en vigor en 2025**, tras la aprobación de la nueva NTI-RISP, al día siguiente de su publicación en el BOE. **A partir de ese momento, los publicadores de datos dispondrán de un periodo de adaptación de seis meses** para implementar el nuevo perfil de aplicación, siguiendo la documentación de apoyo proporcionada.
+    **[DCAT-AP-ES](https://datosgobes.github.io/DCAT-AP-ES) entrará en vigor próximamente**, tras la aprobación de la nueva NTI-RISP, al día siguiente de su publicación en el BOE. **A partir de ese momento, los publicadores de datos dispondrán de un periodo de adaptación** para implementar el nuevo perfil de aplicación, siguiendo la documentación de apoyo proporcionada.
 
 
 # Implementación práctica de los metadatos de la NTI-RISP

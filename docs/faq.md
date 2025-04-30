@@ -2,56 +2,16 @@ Esta sección recopila las preguntas más frecuentes sobre la NTI-RISP de 2013, 
 
 Secciones:
 
-* [Aspectos generales](#general): Introduce el repositorio [`datosgobes/NTI-RISP`](https://github.com/datosgobes/NTI-RISP) y su propósito.
 * [Perfiles de aplicación](#application-profile): Contextualiza las especificaciones relacionadas con el modelo de metadatos de la NTI-RISP.
-* [Sobre NTI-RISP](#nti-risp): Aborda preguntas comunes sobre la inmplementación técnica de la NTI-RISP.
+* [Sobre NTI-RISP y DCAT-AP-ES](#nti-risp-dcat-ap-es): Aborda preguntas comunes sobre la inmplementación técnica de la NTI-RISP y su evolución: [DCAT-AP-ES](https://github.com/datosgobes/DCAT-AP-ES/).
 * [Modelo de datos](#model): Explica dudas y conceptos fundamentales del modelo de datos.
 * [Federación](#federation): Responde a dudas sobre la implementación técnica y la federación con el [catálogo nacional](https://datos.gob.es/).
+* [Sobre el repositorio](#nti-risp-repo): Introduce el repositorio [`datosgobes/NTI-RISP`](https://github.com/datosgobes/NTI-RISP/) y su propósito.
 
 
 !!! warning "Relación con las preguntas frecuentes de datos.gob.es"
 
     Este documento se centra en cuestiones específicas sobre el modelo de metadatos de la NTI-RISP y su implementación técnica. Para consultas generales sobre el catálogo nacional, recomendamos visitar las [preguntas frecuentes de datos.gob.es](https://datos.gob.es/faq-page).
-
----
-
-## **Aspectos generales** { .faq-h #general}
-
-<div class="grid cards" markdown>
-
--   :material-source-repository:{ .lg .middle .grid-emoji } **¿Qué es el repositorio NTI-RISP?**{ .grid-title #general-repositorio }  
-
-    ---
-
-    Repositorio de código y seguimiento sobre la implementación de la Norma Técnica de Interoperabilidad de Reutilización de recursos de la información de 2013.
-
-    [:octicons-arrow-right-24: Repositorio](https://github.com/datosgobes/NTI-RISP "Repositorio de código fuente con todo el material de NTI-RISP" )
-
--   :fontawesome-brands-readme:{ .lg .middle .grid-emoji } **¿Qué encontrar en el repositorio NTI-RISP?**{ .grid-title #general-readme }
-
-    ---
-
-    Una aproximación al modelo de metadatos de la NTI-RISP, su implementación y ejemplos.
-
-    [:octicons-arrow-right-24: Léeme](https://github.com/datosgobes/NTI-RISP#guía-para-NTI-RISP "README del repositorio NTI-RISP con indicaciones sobre contenido y contribución" )
-
--   :fontawesome-solid-code-pull-request:{ .lg .middle .grid-emoji } **Pensado para contribuir**{ .grid-title #general-contribuir }
-
-    ---
-
-    Pensado para que la comunidad pueda remitir incidencias y participar en discusiones sobre la implementación técnica de la NTI-RISP y su evolución a DCAT-AP-ES.
-
-    [:octicons-arrow-right-24: Contribuir](https://github.com/datosgobes/NTI-RISP?tab=readme-ov-file#contribución "Informa acerca de incidencias o mejoras del perfil NTI-RISP")
-
--   :fontawesome-brands-creative-commons:{ .lg .middle .grid-emoji } **Código abierto, CC-BY 4.0**{ .grid-title #general-license }  
-
-    ---
-
-    Todo el material esta licenciado con la licencia abierta *Creative Commons Attribution 4.0 International*. 
-
-    [:octicons-arrow-right-24: Licencia](https://github.com/datosgobes/NTI-RISP#CC-BY-4.0-1-ov-file "Licencia de uso libre que permite compartir, copiar, distribuir y modificar una obra, incluso con fines comerciales, con la única condición de reconocer la autoría original")
-
-</div>
 
 ---
 
@@ -96,7 +56,7 @@ Secciones:
 
 ---
 
-## **Sobre la NTI-RISP y el futuro DCAT-AP-ES** { .faq-h #nti-risp}
+## **Sobre NTI-RISP y DCAT-AP-ES** { .faq-h #nti-risp-dcat-ap-es}
 
 <div class="grid cards" markdown>
 
@@ -112,7 +72,7 @@ Secciones:
 
     ---
 
-    Los publicadores disponen de un periodo de adaptación de seis meses desde la entrada en vigor de la nueva Norma y el perfil de aplicación DCAT-AP-ES para migrar desde los modelos de metadatos dispuestos en la NTI-RISP de 2013.
+    Los publicadores disponen de un periodo de adaptación desde la entrada en vigor de la nueva Norma y el perfil de aplicación DCAT-AP-ES para migrar desde los modelos de metadatos dispuestos en la NTI-RISP de 2013.
     
     [:octicons-arrow-right-24: Cambios](https://datosgobes.github.io/DCAT-AP-ES/#annex-1-nti-risp-to-dcat-ap-es)
 
@@ -251,6 +211,46 @@ Secciones:
     Disponibles en la guía online y en el directorio `examples/` del repositorio, organizados por entidades y casos de uso específicos.
 
     [:octicons-arrow-right-24: Ejemplos](/examples)
+
+</div>
+
+---
+
+## **Sobre el repositorio** { .faq-h #nti-risp-repo}
+
+<div class="grid cards" markdown>
+
+-   :material-source-repository:{ .lg .middle .grid-emoji } **¿Qué es el repositorio NTI-RISP?**{ .grid-title #general-repositorio }  
+
+    ---
+
+    Repositorio de código y seguimiento sobre la implementación de la Norma Técnica de Interoperabilidad de Reutilización de recursos de la información de 2013.
+
+    [:octicons-arrow-right-24: Repositorio](https://github.com/datosgobes/NTI-RISP "Repositorio de código fuente con todo el material de NTI-RISP" )
+
+-   :fontawesome-brands-readme:{ .lg .middle .grid-emoji } **¿Qué encontrar en el repositorio NTI-RISP?**{ .grid-title #general-readme }
+
+    ---
+
+    Una aproximación al modelo de metadatos de la NTI-RISP, su implementación y ejemplos.
+
+    [:octicons-arrow-right-24: Léeme](https://github.com/datosgobes/NTI-RISP#guía-para-NTI-RISP "README del repositorio NTI-RISP con indicaciones sobre contenido y contribución" )
+
+-   :fontawesome-solid-code-pull-request:{ .lg .middle .grid-emoji } **Pensado para contribuir**{ .grid-title #general-contribuir }
+
+    ---
+
+    Pensado para que la comunidad pueda remitir incidencias y participar en discusiones sobre la implementación técnica de la NTI-RISP y su evolución a DCAT-AP-ES.
+
+    [:octicons-arrow-right-24: Contribuir](https://github.com/datosgobes/NTI-RISP?tab=readme-ov-file#contribución "Informa acerca de incidencias o mejoras del perfil NTI-RISP")
+
+-   :fontawesome-brands-creative-commons:{ .lg .middle .grid-emoji } **Código abierto, CC-BY 4.0**{ .grid-title #general-license }  
+
+    ---
+
+    Todo el material esta licenciado con la licencia abierta *Creative Commons Attribution 4.0 International*. 
+
+    [:octicons-arrow-right-24: Licencia](https://github.com/datosgobes/NTI-RISP#CC-BY-4.0-1-ov-file "Licencia de uso libre que permite compartir, copiar, distribuir y modificar una obra, incluso con fines comerciales, con la única condición de reconocer la autoría original")
 
 </div>
 
