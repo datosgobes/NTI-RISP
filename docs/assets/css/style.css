@@ -886,3 +886,46 @@ a:hover, a:focus {
         padding: 8px 4px;
     }
 }
+
+/* Force visibility for period text */
+.header-summary dd span.period-start,
+.header-summary dd span.period-end {
+    color: #000000 !important; 
+    font-size: 1em !important; 
+    opacity: 1 !important; 
+    visibility: visible !important;
+    text-indent: 0 !important;
+    display: inline !important;
+    background: none !important; 
+    border-bottom: 1px dotted #555 !important; 
+    padding: 0 !important; 
+    margin: 0 !important; 
+}
+
+.header-summary dd {
+    color: #333 !important; 
+    font-size: 1em !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Header title style - Enhanced */
+.md-header__topic .md-ellipsis {
+    font-size: 0.95rem; 
+    font-weight: 400; 
+    color: var(--blue-aporta);
+    letter-spacing: 0.5px; 
+    opacity: 0.75; 
+    text-overflow: ellipsis; 
+    transition: opacity 0.2s; /* Transición suave */
+}
+
+.md-header__topic .md-ellipsis:hover {
+    opacity: 1; 
+}
+
+/* Asegurar alineación vertical si es necesario */
+.md-header__title {
+    display: flex;
+    align-items: center; 
+}

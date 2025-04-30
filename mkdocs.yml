@@ -249,8 +249,8 @@ dcatapes:
         alt: 'Iniciativa Aporta'
         src: '/NTI-RISP/img/iniciativa_aporta.svg'
     document_title: NTI-RISP 1.0.0
-    published_date: '2013-03-04'
-    published_date_human: '4 de marzo de 2013'
+    published_date: '2025-04-30'
+    published_date_human: '30 de abril de 2025'
     details_summary: Más detalles sobre este documento
     latest_published_version: 'https://datosgobes.github.io/NTI-RISP'
     latest_editors_draft: 'https://github.com/datosgobes/NTI-RISP/releases/tag/1.0.0'
@@ -278,6 +278,13 @@ dcatapes:
     owners:
       - name: Iniciativa de datos abiertos del Gobierno de España
         link: 'https://datos.gob.es/'
+    period:
+      start:
+        value: "2013-03-04"
+        title: "Fecha de entrada en vigor de NTI-RISP"
+      end:
+        value: "Vigente" 
+        title: "Fecha de descontinuación o vigencia"
     categories:
       latest_published_version: Última versión publicada
       latest_editors_draft: Último borrador del editor
@@ -286,6 +293,7 @@ dcatapes:
       author: Autor
       feedback: Retroalimentación
       owners: Propietarios
+      period: "Período de vigencia"
     copyright:
       name: CC BY 4.0
       link: https://creativecommons.org/licenses/by/4.0/
@@ -392,8 +400,8 @@ dcatapes:
         alt: 'Aporta Initiative'
         src: '/NTI-RISP/img/iniciativa_aporta.svg'
     document_title: NTI-RISP 1.0.0
-    published_date: '2013-03-04'
-    published_date_human: '4 de marzo de 2013'
+    published_date: '2025-04-30'
+    published_date_human: '30 de abril de 2025'
     details_summary: More details about this document
     latest_published_version: 'https://datosgobes.github.io/NTI-RISP'
     latest_editors_draft: 'https://github.com/datosgobes/NTI-RISP/releases/tag/1.0.0'
@@ -422,6 +430,13 @@ dcatapes:
     owners:
       - name: Spanish Government Open Data Initiative
         link: 'https://datos.gob.es/'
+    period:
+      start:
+        value: "2013-03-04"
+        title: "Effective date of NTI-RISP"
+      end:
+        value: "Vigente"
+        title: "End of life or effective date"
     categories:
       latest_published_version: Latest Published Version
       latest_editors_draft: Latest Editor's Draft
@@ -430,6 +445,7 @@ dcatapes:
       author: Author
       feedback: Feedback
       owners: Owners
+      period: "Period of validity"
     copyright:
       name: CC BY 4.0
       link: https://creativecommons.org/licenses/by/4.0/
