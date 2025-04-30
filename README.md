@@ -1,10 +1,10 @@
 # Repositorio NTI-RISP
 [![ES](https://img.shields.io/badge/lang-ES-yellow.svg)](README.md) [![EN](https://img.shields.io/badge/lang-EN-blue.svg)](README.en.md)
 
-Este proyecto proporciona una serie de recursos para la [implementación técnica de NTI-RISP (2013)](https://datos.gob.es/es/documentacion/etiquetas/normativas-3836), un perfil de aplicación del vocabulario de catálogo de datos para España.
+Este proyecto proporciona una serie de recursos para la [implementación técnica de NTI-RISP (2013)](https://datos.gob.es/es/documentacion/etiquetas/normativas-3836), un perfil de aplicación del vocabulario de catálogo de datos ([DCAT](https://datos.gob.es/es/documentacion/dcat-ap-perfil-de-aplicacion-de-dcat-para-portales-open-data-europeos)) para España.
 
 > [!TIP]
-> La documentación disponible en [NTI-RISP Online](https://datosgobes.github.io/NTI-RISP/) está diseñada para servir como referencia tanto para publicadores como para usuarios de datos abiertos. En ella se detallan los principios y directrices para estructurar y describir conjuntos de datos de acuerdo con el modelo de metadatos de la [Norma Técnica de Interoperabilidad de Reutilización de Recursos de Información (NTI-RISP)](https://www.boe.es/eli/es/res/2013/02/19/(4)), facilitando su interoperabilidad y reutilización. Además, incluye esquemas de metadatos, ejemplos prácticos, y guías de implementación que ayudan a garantizar una correcta adopción del perfil.
+> La documentación disponible en [NTI-RISP Online](https://datosgobes.github.io/NTI-RISP/) está diseñada para servir como referencia tanto para publicadores como para usuarios de datos abiertos. En ella se detallan los principios y directrices para estructurar y describir conjuntos de datos de acuerdo con el perfil de aplicación NTI-RISP, facilitando su interoperabilidad y reutilización. Además, incluye esquemas de metadatos, ejemplos prácticos, y guías de implementación que ayudan a garantizar una correcta adopción del perfil.
 
 ## Estructura del Proyecto
 
