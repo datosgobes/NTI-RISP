@@ -140,20 +140,11 @@
     [
         sh:path dct:accrualPeriodicity ;
         sh:maxCount 1 ;
-        sh:or (
-            [
-                # Literal con formato ISO8601
-                sh:nodeKind sh:Literal ;
-                sh:pattern "^P([0-9]+Y)?([0-9]+M)?([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+S)?)?$" ;
-                sh:message "El valor debe ser un período ISO8601 válido, ejemplo: 'P0Y3M0DT0H0M0S' para trimestral"@es ;
-            ]
-            [
-                # Estructura compleja con dct:Frequency
-                sh:nodeKind sh:BlankNodeOrIRI ;
-                sh:class dct:Frequency ;
-                sh:node :Frequency_Shape ;
-            ]
-        ) ;
+
+        # Estructura compleja con dct:Frequency
+        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:class dct:Frequency ;
+        sh:node :Frequency_Shape ;
         sh:severity sh:Violation ;
     ],
     
