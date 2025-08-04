@@ -1,0 +1,57 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://dcat-ap-es.ejemplo.org/catalogo>
+  a dcat:Catalog ;
+  dct:title "Catálogo de Datos Abiertos"@es, "Open Data Catalog"@en ;
+  dct:description "Catálogo de Datos Abiertos que sirve de ejemplo en DCAT-AP-ES."@es, "Open Data Catalogue that serves as an example in DCAT-AP-ES."@en ;
+  foaf:homepage <http://dcat-ap-es.ejemplo.org> ;
+  dct:publisher <http://datos.gob.es/recurso/sector-publico/org/Organismo/E0DAT0001> ;
+  dcat:themeTaxonomy <http://datos.gob.es/kos/sector-publico/sector>, <http://publications.europa.eu/resource/authority/data-theme> ;
+  dct:issued "2025-01-01T09:00:00+01:00"^^xsd:dateTime ;
+  dct:modified "2025-01-02T12:00:00+01:00"^^xsd:dateTime ;
+  dc:language "es", "en" ;
+  dct:spatial <http://datos.gob.es/recurso/sector-publico/territorio/Pais/España> ;
+  dct:license <http://publications.europa.eu/resource/authority/licence/CC_BY_4_0> ;
+  dcat:dataset <http://dcat-ap-es.ejemplo.org/dataset/dataset-ejemplo-1> .
+
+<http://dcat-ap-es.ejemplo.org/dataset/dataset-ejemplo-1>
+  a dcat:Dataset ;
+  dct:identifier "http://dcat-ap-es.ejemplo.org/dataset/dataset-ejemplo-1" ;
+  dct:title "Dataset de ejemplo"@es, "Example Dataset"@en ;
+  dct:description "Descripción de un dataset de ejemplo."@es, "Example dataset description."@en ;
+  dct:publisher <http://datos.gob.es/recurso/sector-publico/org/Organismo/E0DAT0001> ;
+  dcat:theme <http://datos.gob.es/kos/sector-publico/sector/medio-ambiente> ;
+  dct:spatial <http://datos.gob.es/recurso/sector-publico/territorio/Pais/España> ;
+  dcat:keyword "estadísticas"@es ;
+  dct:license <http://publications.europa.eu/resource/authority/licence/CC_BY_4_0> ;
+  dc:language "es", "en" ;
+  dct:temporal [
+    a time:Interval, dct:PeriodOfTime ;
+    time:hasBeginning [
+      a time:Instant ;
+      time:inXSDDateTime "2021-01-01T00:00:00"^^xsd:dateTime
+    ] ;
+    time:hasEnd [
+      a time:Instant ;
+      time:inXSDDateTime "20255-01-01T00:00:00"^^xsd:dateTime
+    ]
+  ] ;
+  dcat:distribution <http://dcat-ap-es.ejemplo.org/distribucion/dataset-ejemplo-1-CSV> .
+
+<http://dcat-ap-es.ejemplo.org/distribucion/dataset-ejemplo-1-CSV>
+  a dcat:Distribution ;
+  dct:title "Distribución de ejemplo"@es, "Example distribution"@en ;
+  dct:description "Descripción de un distribución de ejemplo."@es ;
+  dcat:accessURL <http://dcat-ap-es.ejemplo.org/files/dataset-ejemplo-1.CSV> ;
+  dct:format [
+    a dct:IMT ;
+    rdf:value "text/csv" ;
+    rdfs:label "CSV"
+  ] .

@@ -214,7 +214,7 @@ Cada conjunto de recursos de información presente en el catálogo se describir�
 | Identificador | URI que identifica al documento o recurso de información. | dct:identifier | R | 0..1 | **xsd:anyURI**<br>*URI que identifica la ficha descriptiva del documento o recurso de información.* |
 | Fecha de creación | Fecha de creación del documento o recurso de información. | dct:issued | R | 0..1 | **rdfs:Literal**<br>*Fecha/Hora con formato ISO-8601: `YYYY-MM-DDThh:mm:ssTZD`.* |
 | Fecha de última actualización | Última fecha conocida en la que se modificó o actualizó el contenido del documento o recurso de información. | dct:modified | R | 0..1 | **rdfs:Literal**<br>*Fecha/Hora con formato ISO-8601: `YYYY-MM-DDThh:mm:ssTZD`.* |
-| Frecuencia de actualización | Periodo de tiempo aproximado entre actualizaciones del documento o recurso de información, si hubiera. | dct:accrualPeriodicity | R | 0..1 | **dct:Frequency**<br>*Se recomienda especificar periodos normalizados con formato ISO8601 (`P<date>T<time>`), o similar.* |
+| Frecuencia de actualización | Periodo de tiempo aproximado entre actualizaciones del documento o recurso de información, si hubiera. | dct:accrualPeriodicity | R | 0..1 | **dct:Frequency**<br>*Se recomienda describir la frecuencia mediante un recurso de tipo `dct:Frequency`, siguiendo el modelo de datos RDF. Si se desea indicar el periodo en formato ISO8601, debe especificarse en el valor de `rdf:value` dentro del nodo `dct:Frequency`. Ver [ejemplos](/examples/#__codelineno-2-14). |
 | Idioma(s) | Idioma(s) en el(los) que se encuentra la información del documento o recurso de información. | dc:language | R | 0..n | **dct:LinguisticSystem**<br>*Valores normalizados de etiquetas para identificar idiomas definidos en el RFC 5646 `es`, `ga`, `ca`, `eu`, `en`, `fr`<br>Se usará una etiqueta por propiedad.* |
 | Organismo que expone y publica los datos | Organismo que publica el documento o recurso de información. | dct:publisher | Ob | 1..1 | **foaf:Agent**<br>*Se especificará el URI correspondiente a un organismo público diferenciados por un código alfanumérico único para cada órgano/unidad/oficina, que será extraído del Directorio Común gestionado por el MINHAP según el esquema siguiente: `http://datos.gob.es/recurso/sector-publico/org/Organismo/{ID}`* |
 | Condiciones de uso | Recurso que describe las condiciones de uso o licencia específica aplicable al propio documento o recurso de información. | dct:license | R | 0..1 | **dct:LicenseDocument**<br>*Se especificará un URI que referencia al recurso que define las condiciones de uso. Si no es una licencia-tipo, y si fuese necesario, en la descripción se podría indicar contraprestación económica utilizando valores del código de divisa normalizado por el estándar [ISO-4217](https://www.iso.org/iso-4217-currency-codes.html) (`EUR`, `USD`, `GBP`, etc.).* |
@@ -236,11 +236,11 @@ A continuación se muestra una tabla con valores de ejemplo que podrían tomar l
 | Identificador | `http://datos.gob.es/catalogo/2332` | |
 | Fecha de creación | `2012-12-26` | |
 | Fecha de última actualización | `2012-12-26` | |
-| Frecuencia de actualización | `P0Y3M0DT0H0M0S` |(Trimestral |
+| Frecuencia de actualización | `P0Y3M0DT0H0M0S` |Trimestral |
 | Idioma(s) | `es` `ga` `ca` `en` | Castellano, gallego, catalán e inglés |
 | Organismo que expone y publica los datos | `http://datos.gob.es/recurso/sector-publico/org/Organismo/E00004401` | URI correspondiente al Ministerio de Hacienda y Administraciones Públicas |
 | Condiciones de uso | `http://www.minhap.gob.es/Documentacion/Publico/NormativaDoctrina/Catastro/Acceso%20a%20la%20informacion%20catastral/res_230311.pdf` | |
-| Cobertura geográfica | `http://datos.gob.es/recurso/sector-publico/territorio/Pais/España` |(toda España |
+| Cobertura geográfica | `http://datos.gob.es/recurso/sector-publico/territorio/Pais/España` |toda España |
 | Cobertura temporal | `2012-12-26` `2013-03-26` | Del *2012-12-26* al *2013-03-26*
 | Vigencia del recurso | `2013-03-26` | Válido hasta el *2013-03-26* |
 | Recurso(s) relacionado(s) | `http://www1.sedecatastro.gob.es` | Sede Electrónica del Catastro |

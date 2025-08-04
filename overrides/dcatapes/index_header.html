@@ -93,12 +93,12 @@
                     {{ config.dcatapes[lang].period.start.value }}
                   </span>
                 {% endif %}
-                {% if config.dcatapes[lang].period.start.value and config.dcatapes[lang].period.end.value %}
+                {% if config.dcatapes[lang].period.start.value and period_end_value %}
                   &nbsp;–&nbsp;
                 {% endif %}
-                {% if config.dcatapes[lang].period.end.value %}
-                  <span class="period-end tooltip" title="{{ config.dcatapes[lang].period.end.title }}">
-                    {{ config.dcatapes[lang].period.end.value }}
+                {% if period_end_value %}
+                  <span class="period-end tooltip" title="{{ period_end.title }}">
+                    {{ period_end_value }}
                   </span>
                 {% endif %}
               </dd>

@@ -103,3 +103,31 @@ La distribución `http://datos.gob.es/catalogo/2332/SHP` proporciona el acceso a
     ```turtle linenums="1"
     --8<-- "examples/ttl/NTI-RISP_Distribution.ttl"
     ```
+
+# Ejemplo de migración: [Catálogo NTI-RISP a DCAT-AP-ES](/catalogo_-_nti_dcatapes)
+Este ejemplo muestra cómo un catálogo modelado originalmente según NTI-RISP (2013) puede adaptarse al perfil [DCAT-AP-ES](https://datosgobes.github.io/DCAT-AP-ES). Sirve como plantilla para la transición porque mantiene la estructura básica del catálogo NTI-RISP y la enriquece con metadatos interoperables a nivel europeo, facilitando la integración en portales nacionales y europeos.
+
+El catálogo `http://dcat-ap-es.ejemplo.org/catalogo` incluye información esencial como título, descripción, publicador, fechas clave, página web, temáticas, idiomas, términos de uso y referencia a datasets. Además, incorpora elementos recomendados por DCAT-AP-ES, como la cobertura geográfica y la alineación con vocabularios europeos, lo que permite una migración progresiva y compatible.
+
+Este ejemplo es útil como plantilla porque:
+- Muestra cómo mapear propiedades NTI-RISP a DCAT-AP-ES sin perder información relevante.
+- Permite enriquecer el catálogo con nuevos metadatos exigidos por DCAT-AP-ES.
+- Facilita la interoperabilidad y el cumplimiento de estándares europeos.
+- Es fácilmente adaptable a otros catálogos NTI-RISP existentes.
+
+!!! tip "Ejemplos disponibles"
+
+    Puedes consultar versiones de ejemplo migradas al perfil DCAT-AP-ES en los siguientes enlaces:
+
+    - [Catálogo NTI-RISP a DCAT-AP-ES](https://datosgobes.github.io/DCAT-AP-ES/examples/#catalogo_-_nti_dcatapes)
+    - [Catálogo NTI-RISP a DCAT-AP-ES HVD](https://datosgobes.github.io/DCAT-AP-ES/examples/#catalogo_-_nti_dcatapes_hvd)
+
+=== "RDF/XML"
+    ```xml linenums="1"
+    --8<-- "examples/rdf/E_NTI-RISP_Catalog.rdf"
+    ```
+
+=== "TTL"
+    ```turtle linenums="1"
+    --8<-- "examples/ttl/E_NTI-RISP_Catalog.ttl"
+    ```
