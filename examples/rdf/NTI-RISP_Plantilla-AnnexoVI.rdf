@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+  xmlns:time="http://www.w3.org/2006/time#"
+  xmlns:dct="http://purl.org/dc/terms/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:dcat="http://www.w3.org/ns/dcat#"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+  xmlns:tema="http://datos.gob.es/kos/sector-publico/sector/"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <dcat:Catalog rdf:about="@@URI-catalogo@@"> 
+	<dct:identifier>@@URI-catalogo@@</dct:identifier>
+	<dct:title xml:lang="es">@@TEXTO-título-idioma1@@</dct:title> <!-- Una línea por idioma -->
+	<dct:title xml:lang="en">@@TEXTO-título-idioma2@@</dct:title>
+	<dct:description xml:lang="es">@@TEXTO-descripción-idioma1@@</dct:description> <!-- Una línea por idioma -->
+	<dct:description xml:lang="en">@@TEXTO-descripción-idioma2@@</dct:description>
+	<dct:publisher rdf:resource="@@URI-organismo@@" /> <!-- http://datos.gob.es/recurso/sector-publico/org/Organismo/{ID-MINHAP} -->
+	<dct:extent>
+	  <dct:SizeOrDuration>
+		<rdf:value
+		  rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">@@NUMERO-entero@@</rdf:value>
+		<rdfs:label xml:lang="es">@@número-texto@@</rdfs:label>
+	  </dct:SizeOrDuration>
+	</dct:extent>
+	<dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">@@FECHA-creación@@</dct:issued> <!-- Formato YYYY-MM-DDTHH:MM:SS -->
+	<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">@@FECHA-actualización@@</dct:modified> <!-- Formato YYYY-MM-DDTHH:MM:SS -->
+	<dc:language>@@código-idioma1@@</dc:language> <!-- Una línea por idioma.Código ISO639-1:es|ga|en|ca|... -->
+	<dc:language>@@código-idioma2@@</dc:language>
+	<dct:spatial rdf:resource="@@URI-localización1@@" />
+	<dct:spatial rdf:resource="@@URI-localización2@@" />
+			<!--
+			  La cobertura geográfica del catálogo.
+			  Repetir la propiedad si es necesario haciendo referencia a un recurso del estilo:
+				- http://datos.gob.es/recurso/sector-publico/territorio/Pais/España
+				- http://datos.gob.es/recurso/sector-publico/territorio/Autonomia/Extremadura
+				- http://datos.gob.es/recurso/sector-publico/territorio/Provincia/Caceres
+			-->
+	<dcat:themeTaxonomy rdf:resource="http://datos.gob.es/kos/sector-publico/sector/" />
+	<foaf:homepage rdf:resource="@@URI-homepage-catálogo@@" /> <!-- Página principal del própio catálogo -->
+	<dct:license rdf:resource="@@URI-terminos-uso@@" /> <!-- Enlace a recurso con los términos de uso generales -->
+	<!--
+	  Acontinuación:
+	  Especificación de cada uno de los registros contenidos en el catálogo.
+	  Repetir propiedad (dcat:Dataset) por cada documento o recurso de información.
+	-->
+	<dcat:dataset>
+	  <dcat:Dataset rdf:about="@@URI-dataset@@"> <!-- Uno por conjunto de datos -->
+		<dct:identifier>@@URI-dataset@@</dct:identifier>
+		<dct:title xml:lang="es">@@TEXTO-título-idioma1@@</dct:title> <!-- Una línea por idioma es|en|ca|gl|eu-->
+		<dct:title xml:lang="en">@@TEXTO-título-idioma2@@</dct:title>
+		<dct:description xml:lang="es">@@TEXTO-descripción-idioma1@@</dct:description> <!-- Una línea por idioma -->
+		<dct:description xml:lang="en">@@TEXTO-descripción-idioma2@@</dct:description>
+		<dcat:theme rdf:resource="@@URI-sector-temático1@@" />
+		<dcat:theme rdf:resource="@@URI-sector-temático2@@" />
+				<!--
+				  Temática(s) primaria(s) del catálogo. Repetir la propiedad si hay más de una.
+				  Usar el esquema de conceptos normalizado:
+					 http://datos.gob.es/kos/sector-publico/sector/ciencia-tecnologia
+					  http://datos.gob.es/kos/sector-publico/sector/cultura-ocio
+					  http://datos.gob.es/kos/sector-publico/sector/demografia
+					  http://datos.gob.es/kos/sector-publico/sector/deporte
+					  http://datos.gob.es/kos/sector-publico/sector/economia
+					  http://datos.gob.es/kos/sector-publico/sector/educacion
+					  http://datos.gob.es/kos/sector-publico/sector/empleo
+					  http://datos.gob.es/kos/sector-publico/sector/energia
+					  http://datos.gob.es/kos/sector-publico/sector/hacienda
+					  http://datos.gob.es/kos/sector-publico/sector/industria
+					  http://datos.gob.es/kos/sector-publico/sector/legislacion-justicia
+					  http://datos.gob.es/kos/sector-publico/sector/medio-ambiente
+					  http://datos.gob.es/kos/sector-publico/sector/medio-rural-pesca
+					  http://datos.gob.es/kos/sector-publico/sector/salud
+					  http://datos.gob.es/kos/sector-publico/sector/sector-publico
+					  http://datos.gob.es/kos/sector-publico/sector/seguridad
+					  http://datos.gob.es/kos/sector-publico/sector/sociedad-bienestar
+					  http://datos.gob.es/kos/sector-publico/sector/transporte
+					  http://datos.gob.es/kos/sector-publico/sector/turismo
+					  http://datos.gob.es/kos/sector-publico/sector/urbanismo-infraestructuras
+					  http://datos.gob.es/kos/sector-publico/sector/vivienda
+				-->
+		<dcat:keyword>@@TEXTO-palabra-clave1@@</dcat:keyword> <!-- Una línea por etiqueta; si no se define idioma toma por defecto el español-->
+		<dcat:keyword>@@TEXTO-palabra-clave2@@</dcat:keyword>
+		
+		<dcat:keyword xml:lang="es">@@TEXTO-palabra-clave1-español@@</dcat:keyword> <!-- Una línea por etiqueta; si no se define idioma toma por defecto el español-->
+		<dcat:keyword xml:lang="en">@@TEXTO-palabra-clave1-inglés@@</dcat:keyword> <!-- Una línea por etiqueta por idioma -->
+		<dcat:keyword xml:lang="es">@@TEXTO-palabra-clave2-español@@</dcat:keyword>
+		<dcat:keyword xml:lang="en">@@TEXTO-palabra-clave2-inglés@@</dcat:keyword>
+		
+		<dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">@@FECHA-creación@@</dct:issued> <!-- Formato YYYY-MM-DDTHH:MM:SS -->
+		<dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">@@FECHA-actualización@@</dct:modified> <!-- Formato YYYY-MM-DDTHH:MM:SS -->
+		<dct:accrualPeriodicity>
+		  <dct:Frequency>
+			<rdf:value>
+			  <time:DurationDescription>
+			   <rdfs:label>@@TEXTO-intervalo-tiempo@@</rdfs:label>
+			   <time:days rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">@@NUMERO-entero@@</time:days> <!-- puede ser days, weeks, months, years,...-->
+			  </time:DurationDescription>
+			</rdf:value>
+		  </dct:Frequency>
+		</dct:accrualPeriodicity>
+		<dc:language>@@código-idioma1@@</dc:language> <!-- Una línea por idioma.Código ISO639-1:es|ga|en|ca|... -->
+		<dc:language>@@código-idioma2@@</dc:language>
+		<dct:language>texto_libre_de_idioma</dct:language>
+		<dct:publisher rdf:resource="@@URI-organismo@@" /> <!-- http://datos.gob.es/recurso/sector-publico/org/Organismo/{ID-MINHAP} -->
+		<dct:license rdf:resource="@@URI-licencia@@" />
+		<dct:spatial rdf:resource="@@URI-localización1@@" />
+		<dct:spatial rdf:resource="@@URI-localización2@@" />
+			<!--
+			  La cobertura espacial del catálogo.
+			  Repetir la propiedad si es necesario haciendo referencia a un recurso del estilo:
+				- http://datos.gob.es/recurso/sector-publico/territorio/Pais/España
+				- http://datos.gob.es/recurso/sector-publico/territorio/Autonomia/Extremadura
+				- http://datos.gob.es/recurso/sector-publico/territorio/Provincia/Caceres
+			-->
+		<dct:temporal>
+		  <time:Interval>
+			<rdf:type rdf:resource="http://purl.org/dc/terms/PeriodOfTime" />
+			<time:hasBeginning>
+			  <time:Instant>
+				<time:inXSDDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">@@fecha-hora-inicio@@</time:inXSDDateTime> <!-- Formato YYYY-MM-DDTHH:MM:SS -->
+			  </time:Instant>
+			</time:hasBeginning>
+		   <time:hasEnd>
+			 <time:Instant>
+				<time:inXSDDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">@@fecha-hora-fin@@</time:inXSDDateTime> <!-- Formato YYYY-MM-DDTHH:MM:SS -->
+			  </time:Instant>
+			</time:hasEnd>
+		  </time:Interval>
+		</dct:temporal>
+		<dct:valid rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">@@FECHA-validez@@</dct:valid> <!-- Formato YYYY-MM-DDTHH:MM:SS -->
+		<dct:references rdf:resource="@@URI-recurso-relacionado1@@" /> <!-- Una línea por recurso relacionado y sin espacios por delante y por detras de las comillas donde se encuentra la url-->
+		<dct:references rdf:resource="@@URI-recurso-relacionado2@@" />
+		<dct:conformsTo rdf:resource="@@URI-normativa1@@" />
+		<dct:conformsTo rdf:resource="@@URI-normativa2@@" />
+		
+		<dcat:distribution>
+		  <dcat:Distribution> <!-- Uno por distribución --> <!-- <dcat:Distribution rdf:about=""> Donde puede ir un enlace sobre la distribucion  -->
+			<!-- La url de la identificacion de la distribucion no puede ser la misma que la de accessURL -->
+			<dct:identifier>@@URI-distribución1@@</dct:identifier>
+			<dct:title xml:lang="es">@@TEXTO-nombre-distribucion1@@</dct:title> <!-- Una línea por idioma -->
+			<dct:title xml:lang="es">@@TEXTO-nombre-distribucion2@@</dct:title>
+			<dcat:accessURL
+			  rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">@@URL-acceso@@</dcat:accessURL>
+			<dct:format>
+				<dct:IMT>
+					<rdf:value>@@tipo-mine-formato@@</rdf:value>
+					<rdfs:label>@@TEXTO-nombre-formato@@</rdfs:label>
+				</dct:IMT> <!-- Formato MIME -->
+			</dct:format>
+			<dcat:byteSize rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">@@NUMERO-bytes@@</dcat:byteSize>
+			<dct:relation>
+			  <rdf:Description>
+				<foaf:page rdf:resource="@@URL-documento@@" />
+			  </rdf:Description>
+			</dct:relation>
+		  </dcat:Distribution>
+		</dcat:distribution>
+		  <dcat:distribution>
+		  <dcat:Distribution>
+			<!-- La url de la identificacion de la distribucion no puede ser la misma que la de accessURL -->
+			<dct:identifier>@@URI-distribución2@@</dct:identifier>
+			<dct:title xml:lang="es">@@TEXTO-nombre-distribucionA@@</dct:title> <!-- Una línea por idioma -->
+			<dct:title xml:lang="es">@@TEXTO-nombre-distribucionB@@</dct:title>
+			<dcat:accessURL rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">@@URL-acceso@@</dcat:accessURL>
+			<dcat:mediaType>@@tipo-mine-formato@@</dcat:mediaType>
+			<dcat:byteSize rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">@@NUMERO-bytes@@</dcat:byteSize>
+			<dct:relation>
+			  <rdf:Description>
+				<foaf:page rdf:resource="@@URL-documento@@" />
+			  </rdf:Description>
+			</dct:relation>
+		  </dcat:Distribution>
+		  
+		</dcat:distribution>
+	  </dcat:Dataset>
+	</dcat:dataset>
+  </dcat:Catalog>
+</rdf:RDF>
