@@ -1,0 +1,86 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc11: <http://purl.org/dc/elements/1.1/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+
+<http://njh.me/@@URI-catalogo@@>
+  a dcat:Catalog ;
+  dc:identifier "@@URI-catalogo@@" ;
+  dc:title "@@TEXTO-título-idioma1@@"@es, "@@TEXTO-título-idioma2@@"@en ;
+  dc:description "@@TEXTO-descripción-idioma1@@"@es, "@@TEXTO-descripción-idioma2@@"@en ;
+  dc:publisher <http://njh.me/@@URI-organismo@@> ;
+  dc:extent [
+    a dc:SizeOrDuration ;
+    rdf:value "@@NUMERO-entero@@"^^xsd:nonNegativeInteger ;
+    rdfs:label "@@número-texto@@"@es
+  ] ;
+  dc:issued "@@FECHA-creación@@"^^xsd:dateTime ;
+  dc:modified "@@FECHA-actualización@@"^^xsd:dateTime ;
+  dc11:language "@@código-idioma1@@", "@@código-idioma2@@" ;
+  dc:spatial <http://njh.me/@@URI-localización1@@>, <http://njh.me/@@URI-localización2@@> ;
+  dcat:themeTaxonomy <http://datos.gob.es/kos/sector-publico/sector/> ;
+  foaf:homepage <http://njh.me/@@URI-homepage-catálogo@@> ;
+  dc:license <http://njh.me/@@URI-terminos-uso@@> ;
+  dcat:dataset <http://njh.me/@@URI-dataset@@> .
+
+<http://njh.me/@@URI-dataset@@>
+  a dcat:Dataset ;
+  dc:identifier "@@URI-dataset@@" ;
+  dc:title "@@TEXTO-título-idioma1@@"@es, "@@TEXTO-título-idioma2@@"@en ;
+  dc:description "@@TEXTO-descripción-idioma1@@"@es, "@@TEXTO-descripción-idioma2@@"@en ;
+  dcat:theme <http://njh.me/@@URI-sector-temático1@@>, <http://njh.me/@@URI-sector-temático2@@> ;
+  dcat:keyword "@@TEXTO-palabra-clave1@@", "@@TEXTO-palabra-clave2@@", "@@TEXTO-palabra-clave1-español@@"@es, "@@TEXTO-palabra-clave1-inglés@@"@en, "@@TEXTO-palabra-clave2-español@@"@es, "@@TEXTO-palabra-clave2-inglés@@"@en ;
+  dc:issued "@@FECHA-creación@@"^^xsd:dateTime ;
+  dc:modified "@@FECHA-actualización@@"^^xsd:dateTime ;
+  dc:accrualPeriodicity [
+    a dc:Frequency ;
+    rdf:value [
+      a time:DurationDescription ;
+      rdfs:label "@@TEXTO-intervalo-tiempo@@" ;
+      time:days 0
+    ]
+  ] ;
+  dc11:language "@@código-idioma1@@", "@@código-idioma2@@" ;
+  dc:language "texto_libre_de_idioma" ;
+  dc:publisher <http://njh.me/@@URI-organismo@@> ;
+  dc:license <http://njh.me/@@URI-licencia@@> ;
+  dc:spatial <http://njh.me/@@URI-localización1@@>, <http://njh.me/@@URI-localización2@@> ;
+  dc:temporal [
+    a time:Interval, dc:PeriodOfTime ;
+    time:hasBeginning [
+      a time:Instant ;
+      time:inXSDDateTime "@@fecha-hora-inicio@@"^^xsd:dateTime
+    ] ;
+    time:hasEnd [
+      a time:Instant ;
+      time:inXSDDateTime "@@fecha-hora-fin@@"^^xsd:dateTime
+    ]
+  ] ;
+  dc:valid "@@FECHA-validez@@"^^xsd:dateTime ;
+  dc:references <http://njh.me/@@URI-recurso-relacionado1@@>, <http://njh.me/@@URI-recurso-relacionado2@@> ;
+  dc:conformsTo <http://njh.me/@@URI-normativa1@@>, <http://njh.me/@@URI-normativa2@@> ;
+  dcat:distribution [
+    a dcat:Distribution ;
+    dc:identifier "@@URI-distribución1@@" ;
+    dc:title "@@TEXTO-nombre-distribucion1@@"@es, "@@TEXTO-nombre-distribucion2@@"@es ;
+    dcat:accessURL "@@URL-acceso@@"^^xsd:anyURI ;
+    dc:format [
+      a dc:IMT ;
+      rdf:value "@@tipo-mine-formato@@" ;
+      rdfs:label "@@TEXTO-nombre-formato@@"
+    ] ;
+    dcat:byteSize @@NUMERO-bytes@@ ;
+    dc:relation [ foaf:page <http://njh.me/@@URL-documento@@> ]
+  ], [
+    a dcat:Distribution ;
+    dc:identifier "@@URI-distribución2@@" ;
+    dc:title "@@TEXTO-nombre-distribucionA@@"@es, "@@TEXTO-nombre-distribucionB@@"@es ;
+    dcat:accessURL "@@URL-acceso@@"^^xsd:anyURI ;
+    dcat:mediaType "@@tipo-mine-formato@@" ;
+    dcat:byteSize @@NUMERO-bytes@@ ;
+    dc:relation [ foaf:page <http://njh.me/@@URL-documento@@> ]
+  ] .

@@ -15,7 +15,7 @@
     * URI organismo: `http://datos.gob.es/recurso/sector-publico/org/Organismo/Identificador-Organismo`
 
 
-# Catálogo - Clase: [`dcat:Catalog`](/catalogo_-_clase_dcatcatalog_-_obligatorio)
+# Catálogo - Clase: [`dcat:Catalog`](/#catalogo_-_clase_dcatcatalog_-_obligatorio)
 ## Catálogo - Propiedades
 Este ejemplo ilustra la creación de un catálogo de datos conforme al perfil NTI-RISP, mostrando tanto las propiedades esenciales como las complementarias.
 
@@ -46,7 +46,7 @@ Para mayor riqueza informativa, el catálogo también incluye:
     --8<-- "examples/ttl/NTI-RISP_Catalog.ttl"
     ```
 
-# Conjunto de datos - Clase: [`dcat:Dataset`](/conjunto_de_datos_-_clase_dcatdataset_-_obligatorio)
+# Conjunto de datos - Clase: [`dcat:Dataset`](/#distribucion_-_clase_dcatdistribution_-_obligatorio)
 ## Conjunto de datos - Propiedades
 Este ejemplo muestra un conjunto de datos completo según la norma NTI-RISP, describiendo información catastral disponible en España.
 
@@ -78,7 +78,7 @@ El conjunto de datos incluye información complementaria relevante:
     --8<-- "examples/ttl/NTI-RISP_Dataset.ttl"
     ```
 
-# Distribución - Clase: [`dcat:Dataset`](/conjunto_de_datos_-_clase_dcatdataset_-_obligatorio)
+# Distribución - Clase: [`dcat:Distribution`](/#distribucion_-_clase_dcatdistribution_-_obligatorio)
 ## Distribución - Propiedades
 Este ejemplo muestra la forma correcta de documentar una distribución del conjunto de datos según la norma NTI-RISP.
 
@@ -104,7 +104,7 @@ La distribución `http://datos.gob.es/catalogo/2332/SHP` proporciona el acceso a
     --8<-- "examples/ttl/NTI-RISP_Distribution.ttl"
     ```
 
-# Ejemplo de migración: [Catálogo NTI-RISP a DCAT-AP-ES](/catalogo_-_nti_dcatapes)
+# Ejemplo de migración: Catálogo NTI-RISP a DCAT-AP-ES
 Este ejemplo muestra cómo un catálogo modelado originalmente según NTI-RISP (2013) puede adaptarse al perfil [DCAT-AP-ES](https://datosgobes.github.io/DCAT-AP-ES). Sirve como plantilla para la transición porque mantiene la estructura básica del catálogo NTI-RISP y la enriquece con metadatos interoperables a nivel europeo, facilitando la integración en portales nacionales y europeos.
 
 El catálogo `http://dcat-ap-es.ejemplo.org/catalogo` incluye información esencial como título, descripción, publicador, fechas clave, página web, temáticas, idiomas, términos de uso y referencia a datasets. Además, incorpora elementos recomendados por DCAT-AP-ES, como la cobertura geográfica y la alineación con vocabularios europeos, lo que permite una migración progresiva y compatible.
@@ -130,4 +130,40 @@ Este ejemplo es útil como plantilla porque:
 === "TTL"
     ```turtle linenums="1"
     --8<-- "examples/ttl/E_NTI-RISP_Catalog.ttl"
+    ```
+
+
+# Plantilla de descripción de metadatos: Anexo VI. NTI-RISP (2013)
+A continuación se muestra un modelo de representación para la descripción en RDF catálogo de datos, conjuntos de recursos de información y distribuciones asociadas. Representan las plantillas presentes en el [anexo VI de la NTI-RISP](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2013-2380), con ejemplos de código expresado en RDF/XML y Turtle (TTL). En ambas plantillas se identifican variables, así como comentarios sobre los posibles valores a utilizar. 
+
+En caso de que exista algún metadato que no tenga aplicación o no se conozca el valor, se representarán las propiedades. En ningún caso se indicarán elementos sin valor. 
+
+!!! tip "Guías del catálogo nacional"
+
+    Puedes encontrar las guías y plantillas originales en el portal de datos abiertos: [Guías de datos.gob.es](https://datos.gob.es/es/documentacion/guias-de-datosgobes)
+
+
+
+## Plantilla RDF/XML para la federación de conjuntos de datos
+
+=== "RDF/XML"
+    ```xml linenums="1"
+    --8<-- "examples/rdf/NTI-RISP_Plantilla-AnnexoVI.rdf"
+    ```
+
+=== "TTL"
+    ```turtle linenums="1"
+    --8<-- "examples/ttl/NTI-RISP_Plantilla-AnnexoVI.ttl"
+    ```
+
+## Plantilla RDF/XML para la federación paginada
+
+=== "RDF/XML"
+    ```xml linenums="1"
+    --8<-- "examples/rdf/NTI-RISP_Plantilla-AnnexoVI_pag.rdf"
+    ```
+
+=== "TTL"
+    ```turtle linenums="1"
+    --8<-- "examples/ttl/NTI-RISP_Plantilla-AnnexoVI_pag.ttl"
     ```
