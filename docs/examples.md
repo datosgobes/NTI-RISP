@@ -56,7 +56,7 @@ Esta plantilla ilustra cómo gestionar catálogos con muchas entidades mediante 
     --8<-- "examples/ttl/NTI-RISP_Plantilla-AnnexoVI_pag.ttl"
     ```
 
-## Catálogo: NTI-RISP a DCAT-AP-ES {#catalogo_-_nti_dcatapes}
+## Catálogo - NTI-RISP a DCAT-AP-ES {#catalogo_-_nti_dcatapes}
 
 Este ejemplo muestra cómo un catálogo modelado originalmente según NTI-RISP (2013) puede adaptarse al perfil [DCAT-AP-ES](https://datosgobes.github.io/DCAT-AP-ES). Sirve como plantilla para la transición porque mantiene la estructura básica del catálogo NTI-RISP y la enriquece con metadatos interoperables a nivel europeo, facilitando la integración en portales nacionales y europeos.
 
