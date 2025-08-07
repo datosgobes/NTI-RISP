@@ -16,7 +16,7 @@
 
 # Plantillas
 
-## Descripción de metadatos: Anexo VI. NTI-RISP (2013)
+## Descripción de metadatos: Anexo VI. NTI-RISP (2013) {#ntirisp_recommended}
 A continuación se presentan dos plantillas basadas en el [anexo VI de la NTI-RISP](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2013-2380) para la descripción de catálogos en RDF. Cada una está diseñada para un caso de uso específico:
 
 *   [**Federación de conjuntos de datos**](#federacion_de_conjuntos_de_datos): Una plantilla base para la mayoría de los catálogos, que incluye un ejemplo completo con catálogo, dataset y distribución.
@@ -56,7 +56,7 @@ Esta plantilla ilustra cómo gestionar catálogos con muchas entidades mediante 
     --8<-- "examples/ttl/NTI-RISP_Plantilla-AnnexoVI_pag.ttl"
     ```
 
-## Catálogo - NTI-RISP a DCAT-AP-ES {#catalogo_-_nti_dcatapes}
+## Migración desde NTI-RISP a DCAT-AP-ES {#catalogo_-_nti_dcatapes}
 
 Este ejemplo muestra cómo un catálogo modelado originalmente según NTI-RISP (2013) puede adaptarse al perfil [DCAT-AP-ES](https://datosgobes.github.io/DCAT-AP-ES). Sirve como plantilla para la transición porque mantiene la estructura básica del catálogo NTI-RISP y la enriquece con metadatos interoperables a nivel europeo, facilitando la integración en portales nacionales y europeos.
 
