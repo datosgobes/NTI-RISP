@@ -14,16 +14,23 @@
     * URI distribución: `http://datos.gob.es/resource/distribucion-ejemplo-1` 
     * URI organismo: `http://datos.gob.es/recurso/sector-publico/org/Organismo/Identificador-Organismo`
 
-# Plantillas de descripción de metadatos: Anexo VI. NTI-RISP (2013)
-A continuación se muestra un modelo de representación para la descripción en RDF catálogo de datos, conjuntos de recursos de información y distribuciones asociadas. Representan las plantillas presentes en el [anexo VI de la NTI-RISP](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2013-2380), con ejemplos de código expresado en RDF/XML y Turtle (TTL). En ambas plantillas se identifican variables, así como comentarios sobre los posibles valores a utilizar. 
+# Plantillas
 
-En caso de que exista algún metadato que no tenga aplicación o no se conozca el valor, se representarán las propiedades. En ningún caso se indicarán elementos sin valor. 
+## Descripción de metadatos: Anexo VI. NTI-RISP (2013)
+A continuación se presentan dos plantillas basadas en el [anexo VI de la NTI-RISP](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2013-2380) para la descripción de catálogos en RDF. Cada una está diseñada para un caso de uso específico:
+
+*   [**Federación de conjuntos de datos**](#federacion_de_conjuntos_de_datos): Una plantilla base para la mayoría de los catálogos, que incluye un ejemplo completo con catálogo, dataset y distribución.
+*   [**Federación paginada**](#federacion_paginada): Una plantilla avanzada para catálogos de gran tamaño que requieren paginación para ser gestionados eficientemente por los cosechadores.
+   
+Ambas plantillas están disponibles en RDF/XML y Turtle (TTL), e identifican variables y comentarios para facilitar su uso. En caso de que exista algún metadato que no tenga aplicación o no se conozca el valor, se representarán las propiedades. En ningún caso se indicarán elementos sin valor.
 
 !!! tip "Guías del catálogo nacional"
 
     Puedes encontrar las guías y plantillas originales en el portal de datos abiertos: [Guías de datos.gob.es](https://datos.gob.es/es/documentacion/guias-de-datosgobes)
 
-## Plantilla RDF/XML para la federación de conjuntos de datos
+### Federación de conjuntos de datos
+
+Esta plantilla muestra un ejemplo completo de un fichero de catálogo para la federación, incluyendo la descripción del catálogo, un conjunto de datos y su distribución. Es el modelo base para la interoperabilidad.
 
 === "RDF/XML"
     ```xml linenums="1"
@@ -35,7 +42,9 @@ En caso de que exista algún metadato que no tenga aplicación o no se conozca e
     --8<-- "examples/ttl/NTI-RISP_Plantilla-AnnexoVI.ttl"
     ```
 
-## Plantilla RDF/XML para la federación paginada
+### Federación paginada
+
+Esta plantilla ilustra cómo gestionar catálogos con muchas entidades mediante la paginación, haciendo uso del vocabulario [Hydra Core](https://www.w3.org/ns/hydra/core) para los controles de navegación. Muestra cómo enlazar las diferentes páginas del catálogo para asegurar que los cosechadores puedan recorrerlo por completo.
 
 === "RDF/XML"
     ```xml linenums="1"
@@ -45,6 +54,35 @@ En caso de que exista algún metadato que no tenga aplicación o no se conozca e
 === "TTL"
     ```turtle linenums="1"
     --8<-- "examples/ttl/NTI-RISP_Plantilla-AnnexoVI_pag.ttl"
+    ```
+
+## Catálogo: NTI-RISP a DCAT-AP-ES {#catalogo_-_nti_dcatapes}
+
+Este ejemplo muestra cómo un catálogo modelado originalmente según NTI-RISP (2013) puede adaptarse al perfil [DCAT-AP-ES](https://datosgobes.github.io/DCAT-AP-ES). Sirve como plantilla para la transición porque mantiene la estructura básica del catálogo NTI-RISP y la enriquece con metadatos interoperables a nivel europeo, facilitando la integración en portales nacionales y europeos.
+
+El catálogo `http://dcat-ap-es.ejemplo.org/catalogo` incluye información esencial como título, descripción, publicador, fechas clave, página web, temáticas, idiomas, términos de uso y referencia a datasets. Además, incorpora elementos recomendados por DCAT-AP-ES, como la cobertura geográfica y la alineación con vocabularios europeos, lo que permite una migración progresiva y compatible.
+
+Este ejemplo es útil como plantilla porque:
+- Muestra cómo mapear propiedades NTI-RISP a DCAT-AP-ES sin perder información relevante.
+- Permite enriquecer el catálogo con nuevos metadatos exigidos por DCAT-AP-ES.
+- Facilita la interoperabilidad y el cumplimiento de estándares europeos.
+- Es fácilmente adaptable a otros catálogos NTI-RISP existentes.
+
+!!! tip "Ejemplos disponibles"
+
+    Puedes consultar versiones de ejemplo migradas al perfil DCAT-AP-ES en los siguientes enlaces:
+
+    - [Catálogo NTI-RISP a DCAT-AP-ES](https://datosgobes.github.io/DCAT-AP-ES/examples/#catalogo_-_nti_dcatapes)
+    - [Catálogo NTI-RISP a DCAT-AP-ES HVD](https://datosgobes.github.io/DCAT-AP-ES/examples/#catalogo_-_nti_dcatapes_hvd)
+
+=== "RDF/XML"
+    ```xml linenums="1"
+    --8<-- "examples/rdf/E_NTI-RISP_Catalog.rdf"
+    ```
+
+=== "TTL"
+    ```turtle linenums="1"
+    --8<-- "examples/ttl/E_NTI-RISP_Catalog.ttl"
     ```
 
 # Catálogo - Clase: [`dcat:Catalog`](/#catalogo_-_clase_dcatcatalog_-_obligatorio)
@@ -134,32 +172,4 @@ La distribución `http://datos.gob.es/catalogo/2332/SHP` proporciona el acceso a
 === "TTL"
     ```turtle linenums="1"
     --8<-- "examples/ttl/NTI-RISP_Distribution.ttl"
-    ```
-
-# Ejemplo de migración: Catálogo NTI-RISP a DCAT-AP-ES
-Este ejemplo muestra cómo un catálogo modelado originalmente según NTI-RISP (2013) puede adaptarse al perfil [DCAT-AP-ES](https://datosgobes.github.io/DCAT-AP-ES). Sirve como plantilla para la transición porque mantiene la estructura básica del catálogo NTI-RISP y la enriquece con metadatos interoperables a nivel europeo, facilitando la integración en portales nacionales y europeos.
-
-El catálogo `http://dcat-ap-es.ejemplo.org/catalogo` incluye información esencial como título, descripción, publicador, fechas clave, página web, temáticas, idiomas, términos de uso y referencia a datasets. Además, incorpora elementos recomendados por DCAT-AP-ES, como la cobertura geográfica y la alineación con vocabularios europeos, lo que permite una migración progresiva y compatible.
-
-Este ejemplo es útil como plantilla porque:
-- Muestra cómo mapear propiedades NTI-RISP a DCAT-AP-ES sin perder información relevante.
-- Permite enriquecer el catálogo con nuevos metadatos exigidos por DCAT-AP-ES.
-- Facilita la interoperabilidad y el cumplimiento de estándares europeos.
-- Es fácilmente adaptable a otros catálogos NTI-RISP existentes.
-
-!!! tip "Ejemplos disponibles"
-
-    Puedes consultar versiones de ejemplo migradas al perfil DCAT-AP-ES en los siguientes enlaces:
-
-    - [Catálogo NTI-RISP a DCAT-AP-ES](https://datosgobes.github.io/DCAT-AP-ES/examples/#catalogo_-_nti_dcatapes)
-    - [Catálogo NTI-RISP a DCAT-AP-ES HVD](https://datosgobes.github.io/DCAT-AP-ES/examples/#catalogo_-_nti_dcatapes_hvd)
-
-=== "RDF/XML"
-    ```xml linenums="1"
-    --8<-- "examples/rdf/E_NTI-RISP_Catalog.rdf"
-    ```
-
-=== "TTL"
-    ```turtle linenums="1"
-    --8<-- "examples/ttl/E_NTI-RISP_Catalog.ttl"
     ```
