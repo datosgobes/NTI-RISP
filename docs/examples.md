@@ -14,6 +14,38 @@
     * URI distribución: `http://datos.gob.es/resource/distribucion-ejemplo-1` 
     * URI organismo: `http://datos.gob.es/recurso/sector-publico/org/Organismo/Identificador-Organismo`
 
+# Plantillas de descripción de metadatos: Anexo VI. NTI-RISP (2013)
+A continuación se muestra un modelo de representación para la descripción en RDF catálogo de datos, conjuntos de recursos de información y distribuciones asociadas. Representan las plantillas presentes en el [anexo VI de la NTI-RISP](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2013-2380), con ejemplos de código expresado en RDF/XML y Turtle (TTL). En ambas plantillas se identifican variables, así como comentarios sobre los posibles valores a utilizar. 
+
+En caso de que exista algún metadato que no tenga aplicación o no se conozca el valor, se representarán las propiedades. En ningún caso se indicarán elementos sin valor. 
+
+!!! tip "Guías del catálogo nacional"
+
+    Puedes encontrar las guías y plantillas originales en el portal de datos abiertos: [Guías de datos.gob.es](https://datos.gob.es/es/documentacion/guias-de-datosgobes)
+
+## Plantilla RDF/XML para la federación de conjuntos de datos
+
+=== "RDF/XML"
+    ```xml linenums="1"
+    --8<-- "examples/rdf/NTI-RISP_Plantilla-AnnexoVI.rdf"
+    ```
+
+=== "TTL"
+    ```turtle linenums="1"
+    --8<-- "examples/ttl/NTI-RISP_Plantilla-AnnexoVI.ttl"
+    ```
+
+## Plantilla RDF/XML para la federación paginada
+
+=== "RDF/XML"
+    ```xml linenums="1"
+    --8<-- "examples/rdf/NTI-RISP_Plantilla-AnnexoVI_pag.rdf"
+    ```
+
+=== "TTL"
+    ```turtle linenums="1"
+    --8<-- "examples/ttl/NTI-RISP_Plantilla-AnnexoVI_pag.ttl"
+    ```
 
 # Catálogo - Clase: [`dcat:Catalog`](/#catalogo_-_clase_dcatcatalog_-_obligatorio)
 ## Catálogo - Propiedades
@@ -130,40 +162,4 @@ Este ejemplo es útil como plantilla porque:
 === "TTL"
     ```turtle linenums="1"
     --8<-- "examples/ttl/E_NTI-RISP_Catalog.ttl"
-    ```
-
-
-# Plantilla de descripción de metadatos: Anexo VI. NTI-RISP (2013)
-A continuación se muestra un modelo de representación para la descripción en RDF catálogo de datos, conjuntos de recursos de información y distribuciones asociadas. Representan las plantillas presentes en el [anexo VI de la NTI-RISP](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2013-2380), con ejemplos de código expresado en RDF/XML y Turtle (TTL). En ambas plantillas se identifican variables, así como comentarios sobre los posibles valores a utilizar. 
-
-En caso de que exista algún metadato que no tenga aplicación o no se conozca el valor, se representarán las propiedades. En ningún caso se indicarán elementos sin valor. 
-
-!!! tip "Guías del catálogo nacional"
-
-    Puedes encontrar las guías y plantillas originales en el portal de datos abiertos: [Guías de datos.gob.es](https://datos.gob.es/es/documentacion/guias-de-datosgobes)
-
-
-
-## Plantilla RDF/XML para la federación de conjuntos de datos
-
-=== "RDF/XML"
-    ```xml linenums="1"
-    --8<-- "examples/rdf/NTI-RISP_Plantilla-AnnexoVI.rdf"
-    ```
-
-=== "TTL"
-    ```turtle linenums="1"
-    --8<-- "examples/ttl/NTI-RISP_Plantilla-AnnexoVI.ttl"
-    ```
-
-## Plantilla RDF/XML para la federación paginada
-
-=== "RDF/XML"
-    ```xml linenums="1"
-    --8<-- "examples/rdf/NTI-RISP_Plantilla-AnnexoVI_pag.rdf"
-    ```
-
-=== "TTL"
-    ```turtle linenums="1"
-    --8<-- "examples/ttl/NTI-RISP_Plantilla-AnnexoVI_pag.ttl"
     ```
