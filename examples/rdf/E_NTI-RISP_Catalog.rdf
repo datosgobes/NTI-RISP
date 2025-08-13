@@ -47,7 +47,7 @@
 				</time:hasBeginning>
 			   <time:hasEnd>
 				 <time:Instant>
-					<time:inXSDDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">20255-01-01T00:00:00</time:inXSDDateTime>
+					<time:inXSDDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-01-01T00:00:00</time:inXSDDateTime>
 				  </time:Instant>
 				</time:hasEnd>
 			</time:Interval>

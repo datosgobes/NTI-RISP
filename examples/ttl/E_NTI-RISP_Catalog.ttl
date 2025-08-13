@@ -40,7 +40,7 @@
     ] ;
     time:hasEnd [
       a time:Instant ;
-      time:inXSDDateTime "20255-01-01T00:00:00"^^xsd:dateTime
+      time:inXSDDateTime "2025-01-01T00:00:00"^^xsd:dateTime
     ]
   ] ;
   dcat:distribution <http://dcat-ap-es.ejemplo.org/distribucion/dataset-ejemplo-1-CSV> .
