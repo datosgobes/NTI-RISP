@@ -142,5 +142,6 @@
         <http://datos.gob.es/kos/sector-publico/sector/turismo>
         <http://datos.gob.es/kos/sector-publico/sector/urbanismo-infraestructuras>
         <http://datos.gob.es/kos/sector-publico/sector/vivienda>
-    ) ;
-    sh:message "El valor debe ser un IRI que pertenezca a los sectores primarios definidos en NTI-RISP."@es ;
+    );
+    sh:message "El valor debe ser un IRI que pertenezca a los sectores primarios definidos en NTI-RISP."@es ;   
+    sh:severity sh:Violation .
