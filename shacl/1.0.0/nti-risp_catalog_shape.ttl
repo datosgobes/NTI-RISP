@@ -15,6 +15,7 @@
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcatap: <http://data.europa.eu/r5r/> .
 
 <https://datosgobes.github.io/NTI-RISP/releases/1.0.0/shacl/nti-risp_catalog_shape.ttl>
     rdf:type owl:Ontology ;
