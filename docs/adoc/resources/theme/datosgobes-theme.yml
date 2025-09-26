@@ -2,23 +2,23 @@ extends: default
 font:
   catalog:
     merge: true
-    Poppins:
-      normal: Poppins-Regular.ttf
-      bold: Poppins-Bold.ttf
-      italic: Poppins-Italic.ttf
-      bold_italic: Poppins-BoldItalic.ttf
+    Montserrat:
+      normal: Montserrat-Regular.ttf
+      bold: Montserrat-Bold.ttf
+      italic: Montserrat-Italic.ttf
+      bold_italic: Montserrat-BoldItalic.ttf
     SourceCodePro:
       normal: SourceCodePro-Regular.ttf
 base:
-  font_family: Poppins
-  font_size: 12
-  font_color: "#333333"
-  line_height: 1.5
+  font-family: Montserrat
+  font-size: 12
+  font-color: "#333333"
+  line-height: 1.5
 heading:
-  font_family: Poppins
-  font_color: "#0E3062"
-  font_size: 14
-  font_style: bold
+  font-family: Montserrat
+  font-color: "#0E3062"
+  font-size: 14
+  font-style: bold
 page:
   size: A4
   layout: portrait
