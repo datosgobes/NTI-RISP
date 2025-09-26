@@ -90,12 +90,17 @@
     
     # dcat:accessURL (Obligatorio, 1..1)
     [
+    # dcat:accessURL
+        sh:path dcat:accessURL ;
+        sh:nodeKind sh:IRI ;
+        sh:severity sh:Violation ;
+        sh:message "El valor de dcat:accessURL debe ser un IRI válido para dcat:accessURL."@es ;
+    ],
+    [
         sh:path dcat:accessURL ;
         sh:minCount 1 ;
-        sh:maxCount 1 ;
-        sh:nodeKind sh:IRI ;
-        sh:message "La URL con la dirección de acceso al recurso es obligatoria"@es ;
         sh:severity sh:Violation ;
+        sh:message "La distribución debe contener al menos un dcat:accessURL."@es ;
     ],
     
     # dcat:mediaType (Recomendado, 0..1)
