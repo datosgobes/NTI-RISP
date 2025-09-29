@@ -50,18 +50,40 @@
     a sh:NodeShape ;
     sh:name "Catalog"@en ;
     sh:property 
-    # dct:title (Obligatorio, 1..1)
+    # dct:title (Obligatorio, 1..n)
     [
         sh:path dct:title ;
         sh:minCount 1 ;
+        sh:qualifiedMinCount 1 ;
+        sh:qualifiedValueShape [
+            sh:languageIn ("es") ;
+            sh:nodeKind sh:Literal ;
+            sh:datatype rdf:langString ;
+        ] ;
+        sh:message "Debe haber al menos un título en español"@es ;
+    ],
+    [
+        sh:path dct:title ;
         sh:node :MultilingualText_Shape ;
+        sh:message "Cada título debe ser un literal con etiqueta de idioma válida"@es ;
     ],
 
-    # dct:description (Obligatorio, 1..1)
+    # dct:description (Obligatorio, 1..n) 
     [
         sh:path dct:description ;
         sh:minCount 1 ;
+        sh:qualifiedMinCount 1 ;
+        sh:qualifiedValueShape [
+            sh:languageIn ("es") ;
+            sh:nodeKind sh:Literal ;
+            sh:datatype rdf:langString ;
+        ] ;
+        sh:message "Debe haber al menos una descripción en español"@es ;
+    ],
+    [
+        sh:path dct:description ;
         sh:node :MultilingualText_Shape ;
+        sh:message "Cada descripción debe ser un literal con etiqueta de idioma válida"@es ;
     ],
     
     # dct:publisher (Obligatorio, 1..1)

@@ -38,11 +38,10 @@
     a sh:NodeShape ;
     rdfs:comment "Restricción modular para literales de texto con etiquetas de idiomas"@es ;
     sh:nodeKind sh:Literal ;
-    sh:node :LiteralMultilingual_Shape ;
-    sh:node :NonEmptyLiteral_Shape ;
-    sh:node :RecommendedMultilingualLiteral_Shape ;
-    sh:uniqueLang true ;
-    sh:message "Literal de texto multilingüe con al menos español, no vacío y preferiblemente en varios idiomas sin duplicar etiquetas de idioma."@es .
+    sh:datatype rdf:langString ;
+    sh:languageIn ("es" "ca" "eu" "ga" "en" "fr") ;
+    sh:pattern "^.+$" ;
+    sh:message "El valor debe ser un literal con etiqueta de idioma válida (es, ca, eu, ga, en, fr) y no puede estar vacío"@es .
 
 :NonEmptyLiteral_Shape
     a sh:NodeShape ;
@@ -50,24 +49,33 @@
     sh:pattern "^.+$" ;
     sh:message "El valor no puede estar vacío"@es .
 
+# Shape para validar colecciones de texto multilingüe (requiere al menos español)
+:MultilingualTextCollection_Shape
+    a sh:NodeShape ;
+    rdfs:comment "Restricción para colecciones de literales multilingües con al menos uno en español"@es ;
+    # Cada valor individual debe ser un literal con etiqueta de idioma
+    sh:property [
+        sh:path [ sh:zeroOrMorePath rdf:rest ] ;
+        sh:property [
+            sh:path rdf:first ;
+            sh:node :MultilingualText_Shape ;
+        ]
+    ] ;
+    # Al menos un valor debe estar en español
+    sh:qualifiedMinCount 1 ;
+    sh:qualifiedValueShape [
+        sh:languageIn ("es") ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype rdf:langString ;
+    ] ;
+    sh:message "Debe haber al menos un valor en español y todos los valores deben tener etiquetas de idioma válidas"@es .
+
 :LiteralMultilingual_Shape
     a sh:NodeShape ;
     rdfs:comment "Restricción para literales multilingües"@es ;
-    sh:or (
-        [
-            sh:datatype rdf:langString ;
-            # Exige al menos un valor en español
-            sh:qualifiedMinCount 1 ; 
-            sh:qualifiedValueShape [
-                sh:languageIn ("es") ;
-            ] ;
-        ]
-        [
-            sh:datatype xsd:string ;
-            sh:message "Se dede proporcionar un valor con etiqueta de idioma 'es'"@es ;
-        ]
-    ) ;
-    sh:message "El valor debe ser un literal, con al menos una versión en español ('es')"@es .
+    sh:datatype rdf:langString ;
+    sh:languageIn ("es" "ca" "eu" "ga" "en" "fr") ;
+    sh:message "El valor debe ser un literal con etiqueta de idioma válida (es, ca, eu, ga, en, fr)"@es .
 
 :RecommendedMultilingualLiteral_Shape
     a sh:NodeShape ;
@@ -107,12 +115,9 @@
 :LanguageRestriction_Shape
     a sh:NodeShape ;
     rdfs:comment "Restricción para valores de idioma permitidos en dc:language"@es ;
-    sh:property [
-        sh:path rdf:value ;
-        sh:in ("es" "ga" "ca" "eu" "en" "fr") ;
-        sh:message "El valor de dc:language debe ser uno de los idiomas permitidos: 'es', 'ga', 'ca', 'eu', 'en', 'fr'"@es ;
-    ] ;
-    sh:message "El valor de dc:language debe ser un literal con un idioma permitido"@es .
+    sh:nodeKind sh:Literal ;
+    sh:in ("es" "ga" "ca" "eu" "en" "fr") ;
+    sh:message "El valor de dc:language debe ser uno de los idiomas permitidos: 'es', 'ga', 'ca', 'eu', 'en', 'fr'"@es .
 
 :Frequency_Shape
     a sh:NodeShape ;
@@ -299,7 +304,7 @@
     ] ;
     
     # Validar que al menos hay una fecha de inicio usando cualquiera de las sintaxis
-    sh:xone (
+    sh:or (
         [
             sh:property [
                 sh:path dcat:startDate ;
@@ -323,30 +328,39 @@
     # Advertencia para uso de propiedades schema:* versus dcat:*
     sh:property [
         sh:path schema:startDate ;
-        sh:minCount 1 ;
+        sh:maxCount 0;
         sh:severity sh:Info ;
         sh:message "Se recomienda usar dcat:startDate en lugar de schema:startDate para mejor interoperabilidad"@es ;
     ] ;
     sh:property [
         sh:path schema:endDate ;
-        sh:minCount 1 ;
+        sh:maxCount 0;
         sh:severity sh:Info ;
         sh:message "Se recomienda usar dcat:endDate en lugar de schema:endDate para mejor interoperabilidad"@es ;
     ] ;
     
-    sh:targetClass dct:PeriodOfTime .
+    sh:targetClass dct:PeriodOfTime ;
+    sh:targetClass time:Interval .
 
+# Shape para validar estructuras dct:IMT (formatos MIME)
 :MediaType_Shape
     a sh:NodeShape ;
-    rdfs:comment "Validación para estructuras IANA media type"@es ;
-    sh:property 
-    [
-        sh:path dcat:mediaType ;
+    rdfs:comment "Validación para estructuras dct:IMT (IANA media type)"@es ;
+    sh:class dct:IMT ;
+    sh:property [
+        sh:path rdf:value ;
+        sh:nodeKind sh:Literal ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
         sh:pattern "^[a-z0-9]+/[a-z0-9.+-]+$" ;
-        sh:message "El formato debe seguir la estructura estandarizada de tipos MIME: tipo/subtipo"@es ;
-        sh:severity sh:Violation ;
+        sh:message "El valor debe seguir la estructura estandarizada de tipos MIME: tipo/subtipo"@es ;
     ] ;
-    sh:targetClass dcat:Distribution .
+    sh:property [
+        sh:path rdfs:label ;
+        sh:nodeKind sh:Literal ;
+        sh:message "Se recomienda incluir una etiqueta descriptiva del formato"@es ;
+        sh:severity sh:Warning ;
+    ] .
 
 :DIR3OrganismRestriction
     a sh:NodeShape ;
