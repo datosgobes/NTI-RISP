@@ -63,6 +63,7 @@ Este ejemplo muestra cómo un catálogo modelado originalmente según NTI-RISP (
 El catálogo `http://dcat-ap-es.ejemplo.org/catalogo` incluye información esencial como título, descripción, publicador, fechas clave, página web, temáticas, idiomas, términos de uso y referencia a datasets. Además, incorpora elementos recomendados por DCAT-AP-ES, como la cobertura geográfica y la alineación con vocabularios europeos, lo que permite una migración progresiva y compatible.
 
 Este ejemplo es útil como plantilla porque:
+
 - Muestra cómo mapear propiedades NTI-RISP a DCAT-AP-ES sin perder información relevante.
 - Permite enriquecer el catálogo con nuevos metadatos exigidos por DCAT-AP-ES.
 - Facilita la interoperabilidad y el cumplimiento de estándares europeos.
