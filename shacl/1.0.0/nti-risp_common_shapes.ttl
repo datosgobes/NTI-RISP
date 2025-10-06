@@ -204,18 +204,14 @@
     ] ;
     sh:property [
         sh:path rdfs:label ;
-        sh:node :LiteralMultilingual_Shape ;
-        sh:severity sh:Violation ;
-    ] ;
-    sh:property [
-        sh:path rdfs:label ;
         sh:node :NonEmptyLiteral_Shape ;
         sh:severity sh:Violation ;
     ] ;
     sh:property [
         sh:path rdfs:label ;
-        sh:node :RecommendedMultilingualLiteral_Shape ;
-        sh:severity sh:Info ;
+        sh:node :LiteralMultilingual_Shape ;
+        sh:severity sh:Warning ;
+        sh:message "Se recomienda que rdfs:label incluya etiqueta de idioma"@es ;
     ] ;
     # Validación de que al menos una propiedad de tiempo está presente
     sh:or (
