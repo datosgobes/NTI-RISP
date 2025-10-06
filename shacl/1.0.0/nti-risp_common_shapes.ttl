@@ -40,13 +40,13 @@
     sh:nodeKind sh:Literal ;
     sh:datatype rdf:langString ;
     sh:languageIn ("es" "ca" "eu" "ga" "en" "fr") ;
-    sh:pattern "^.+$" ;
+    sh:minLength 1 ;
     sh:message "El valor debe ser un literal con etiqueta de idioma válida (es, ca, eu, ga, en, fr) y no puede estar vacío"@es .
 
 :NonEmptyLiteral_Shape
     a sh:NodeShape ;
     rdfs:comment "Restricción para literales no vacíos"@es ;
-    sh:pattern "^.+$" ;
+    sh:minLength 1 ;
     sh:message "El valor no puede estar vacío"@es .
 
 # Shape para validar colecciones de texto multilingüe (requiere al menos español)
@@ -366,7 +366,6 @@
     a sh:NodeShape ;
     rdfs:comment "Restricción de organismo del sector público según codificación DIR3"@es ;
     rdfs:label "Restricción de organismo del sector público"@es ;
-    
     # Validación: debe ser un IRI del directorio de organismos siguiendo la codificación DIR3
     sh:nodeKind sh:IRI ;
     sh:pattern "^http://datos\\.gob\\.es/recurso/sector-publico/org/Organismo/[A-Z][A-Z0-9]{8}$" ;
