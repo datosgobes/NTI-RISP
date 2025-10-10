@@ -123,13 +123,14 @@
     a sh:NodeShape ;
     rdfs:comment "Validación para estructuras dct:Frequency usadas en dct:accrualPeriodicity"@es ;
     sh:or (
-        # Opción 1: Estructura time:DurationDescription
+        # Opción 1: rdf:value apuntando a un recurso time:DurationDescription
         [
             sh:property [
                 sh:path rdf:value ;
                 sh:minCount 1 ;
                 sh:maxCount 1 ;
                 sh:nodeKind sh:BlankNodeOrIRI ;
+                sh:class time:DurationDescription ;
                 sh:node :TimeDurationDescription_Shape ;
                 sh:message "dct:Frequency debe contener exactamente un rdf:value con una estructura time:DurationDescription válida"@es ;
             ]
@@ -137,15 +138,15 @@
         # Opción 2: rdf:value como literal xsd:duration o xsd:timePeriod y rdfs:label
         [
             sh:property [
-            sh:path rdf:value ;
-            sh:or (
-                [ sh:datatype xsd:duration ]
-                [ sh:datatype <http://www.w3.org/2001/XMLSchema#timePeriod> ]
-            ) ;
-            sh:pattern "^P([0-9]+Y)?([0-9]+M)?([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+S)?)?$" ;
-            sh:minCount 1 ;
-            sh:maxCount 1 ;
-            sh:message "rdf:value debe ser un literal xsd:duration o xsd:timePeriod (ejemplo: P0Y3M0DT0H0M0S) y cumplir el patrón ISO-8601"@es ;
+                sh:path rdf:value ;
+                sh:or (
+                    [ sh:datatype xsd:duration ]
+                    [ sh:datatype <http://www.w3.org/2001/XMLSchema#timePeriod> ]
+                ) ;
+                sh:pattern "^P([0-9]+Y)?([0-9]+M)?([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+S)?)?$" ;
+                sh:minCount 1 ;
+                sh:maxCount 1 ;
+                sh:message "rdf:value debe ser un literal xsd:duration o xsd:timePeriod (ejemplo: P0Y3M0DT0H0M0S) y cumplir el patrón ISO-8601"@es ;
             ] ;
             sh:property [
                 sh:path rdfs:label ;
