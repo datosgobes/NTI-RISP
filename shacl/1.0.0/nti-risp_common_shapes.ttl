@@ -242,17 +242,12 @@
         sh:message "El valor de dcat:startDate debe ser una fecha o fecha-hora válida"@es ;
     ] ;
     
-    # Validación para schema:startDate (compatible)
+    # schema:startDate NO permitido - usar dcat:startDate
     sh:property [
         sh:path schema:startDate ;
-        sh:nodeKind sh:Literal ;
-        sh:maxCount 1 ;
-        sh:or (
-            [ sh:datatype xsd:date ]
-            [ sh:datatype xsd:dateTime ]
-        ) ;
+        sh:maxCount 0 ;
         sh:severity sh:Violation ;
-        sh:message "El valor de schema:startDate debe ser una fecha o fecha-hora válida"@es ;
+        sh:message "No se permite schema:startDate. Debe usar dcat:startDate en su lugar"@es ;
     ] ;
     
     # Validación para dcat:endDate (preferido)
@@ -268,17 +263,12 @@
         sh:message "El valor de dcat:endDate debe ser una fecha o fecha-hora válida"@es ;
     ] ;
     
-    # Validación para schema:endDate (compatible)
+    # schema:endDate NO permitido - usar dcat:endDate
     sh:property [
         sh:path schema:endDate ;
-        sh:nodeKind sh:Literal ;
-        sh:maxCount 1 ;
-        sh:or (
-            [ sh:datatype xsd:date ]
-            [ sh:datatype xsd:dateTime ]
-        ) ;
+        sh:maxCount 0 ;
         sh:severity sh:Violation ;
-        sh:message "El valor de schema:endDate debe ser una fecha o fecha-hora válida"@es ;
+        sh:message "No se permite schema:endDate. Debe usar dcat:endDate en su lugar"@es ;
     ] ;
     
     # Validación para time:hasBeginning (ontología W3C Time)
@@ -299,17 +289,11 @@
         sh:message "El valor de time:hasEnd debe ser un time:Instant válido"@es ;
     ] ;
     
-    # Validar que al menos hay una fecha de inicio usando cualquiera de las sintaxis
+    # Validar que al menos hay una fecha de inicio usando sintaxis permitidas (solo dcat: o time:)
     sh:or (
         [
             sh:property [
                 sh:path dcat:startDate ;
-                sh:minCount 1 ;
-            ]
-        ]
-        [
-            sh:property [
-                sh:path schema:startDate ;
                 sh:minCount 1 ;
             ]
         ]
@@ -320,20 +304,7 @@
             ]
         ]
     ) ;
-    
-    # Advertencia para uso de propiedades schema:* versus dcat:*
-    sh:property [
-        sh:path schema:startDate ;
-        sh:maxCount 0;
-        sh:severity sh:Info ;
-        sh:message "Se recomienda usar dcat:startDate en lugar de schema:startDate para mejor interoperabilidad"@es ;
-    ] ;
-    sh:property [
-        sh:path schema:endDate ;
-        sh:maxCount 0;
-        sh:severity sh:Info ;
-        sh:message "Se recomienda usar dcat:endDate en lugar de schema:endDate para mejor interoperabilidad"@es ;
-    ] ;
+    sh:message "Un período de tiempo debe incluir al menos dcat:startDate o time:hasBeginning. No se permiten propiedades schema:*"@es ;
     
     sh:targetClass dct:PeriodOfTime ;
     sh:targetClass time:Interval .
