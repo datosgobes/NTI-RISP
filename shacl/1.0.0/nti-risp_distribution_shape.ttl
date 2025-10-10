@@ -100,7 +100,6 @@
     [
         sh:path dct:format ;
         sh:node :MediaType_Shape ;
-        sh:severity sh:Violation ;  
     ],
     
     # dcat:mediaType (Recomendado, 0..1) - compatibilidad DCAT

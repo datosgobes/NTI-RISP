@@ -78,6 +78,7 @@
         sh:path dcat:theme ;
         sh:nodeKind sh:IRI ;
         sh:node :NTISectorThemeRestriction ;
+        sh:message "El valor debe ser un IRI que pertenezca a los sectores primarios definidos en NTI-RISP http://datos.gob.es/kos/sector-publico/sector"@es ;
         sh:severity sh:Violation ;
     ],
     
@@ -168,7 +169,6 @@
         sh:nodeKind sh:BlankNodeOrIRI ;
         sh:class dct:Frequency ;
         sh:node :Frequency_Shape ;
-        sh:severity sh:Violation ;
     ],
     
     # dc:language (Obligatorio, 1..n)
@@ -217,12 +217,13 @@
         sh:path dct:spatial ;
         sh:nodeKind sh:IRI ;
         sh:node :TerritoryRestriction ;
+        sh:message "El valor debe ser un IRI del vocabulario de territorio NTI-RISP http://datos.gob.es/recurso/sector-publico/territorio."@es ;
         sh:severity sh:Violation ;
     ],
     
     # dct:temporal (Recomendado, 0..n)
     [
-        sh:path dct:temporal ;
+    [        sh:path dct:temporal ;
         sh:minCount 1 ;
         sh:message "Se recomienda describir un periodo de tiempo que puede ser definido mediante la ontología de Tiempo del W3C (time) "@es ;
         sh:severity sh:Warning ;
@@ -231,7 +232,6 @@
         sh:path dct:temporal ;
         sh:class dct:PeriodOfTime ;
         sh:node :PeriodOfTime_Shape ;
-        sh:severity sh:Violation ;
         sh:message "El período temporal debe seguir las especificaciones de dct:PeriodOfTime"@es ;
     ],
     

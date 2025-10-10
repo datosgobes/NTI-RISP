@@ -96,6 +96,7 @@
     [
         sh:path dct:publisher ;
         sh:node :DIR3OrganismRestriction ;
+        sh:message "El valor debe ser un IRI del directorio de organismos DIR3 con formato http://datos.gob.es/recurso/sector-publico/org/Organismo/{ID}, donde ID es un código alfanumérico de 9 caracteres que puede comenzar con E (Administración General del Estado), A (Administración Autonómica), L (Administración Local), P (Entidades privadas), U (Universidades), etc."@es ;
         sh:severity sh:Violation ;
     ],
     
@@ -201,6 +202,7 @@
         sh:path dct:spatial ;
         sh:nodeKind sh:IRI ;
         sh:node :TerritoryRestriction ;
+        sh:message "El valor debe ser un IRI del vocabulario de territorio NTI-RISP http://datos.gob.es/recurso/sector-publico/territorio."@es ;
         sh:severity sh:Violation ;
     ],
     
