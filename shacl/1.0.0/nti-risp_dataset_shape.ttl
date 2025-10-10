@@ -223,7 +223,7 @@
     
     # dct:temporal (Recomendado, 0..n)
     [
-    [        sh:path dct:temporal ;
+        sh:path dct:temporal ;
         sh:minCount 1 ;
         sh:message "Se recomienda describir un periodo de tiempo que puede ser definido mediante la ontología de Tiempo del W3C (time) "@es ;
         sh:severity sh:Warning ;
