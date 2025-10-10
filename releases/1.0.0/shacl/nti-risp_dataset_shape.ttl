@@ -31,31 +31,54 @@
     a sh:NodeShape ;
     sh:name "Dataset"@en ;
     sh:property 
-    # dct:title (Obligatorio, 1..1)
+    # dct:title (Obligatorio, 1..n)
     [
         sh:path dct:title ;
         sh:minCount 1 ;
+        sh:qualifiedMinCount 1 ;
+        sh:qualifiedValueShape [
+            sh:languageIn ("es") ;
+            sh:nodeKind sh:Literal ;
+            sh:datatype rdf:langString ;
+        ] ;
+        sh:message "Debe haber al menos un título en español"@es ;
+    ],
+    [
+        sh:path dct:title ;
         sh:node :MultilingualText_Shape ;
+        sh:message "Cada título debe ser un literal con etiqueta de idioma válida"@es ;
     ],
 
-    # dct:description (Obligatorio, 1..1)
+    # dct:description (Obligatorio, 1..n)
     [
         sh:path dct:description ;
         sh:minCount 1 ;
+        sh:qualifiedMinCount 1 ;
+        sh:qualifiedValueShape [
+            sh:languageIn ("es") ;
+            sh:nodeKind sh:Literal ;
+            sh:datatype rdf:langString ;
+        ] ;
+        sh:message "Debe haber al menos una descripción en español"@es ;
+    ],
+    [
+        sh:path dct:description ;
         sh:node :MultilingualText_Shape ;
+        sh:message "Cada descripción debe ser un literal con etiqueta de idioma válida"@es ;
     ],
     
-    # dcat:theme (Recomendado, 0..n)
+    # dcat:theme (Obligatorio, 1..n)
     [
         sh:path dcat:theme ;
         sh:minCount 1 ;
-        sh:message "Se recomienda usar un tema del vocabulario http://datos.gob.es/kos/sector-publico/sector"@es ;
-        sh:severity sh:Warning ;
+        sh:message "Se debe usar al menos un tema del vocabulario http://datos.gob.es/kos/sector-publico/sector"@es ;
+        sh:severity sh:Violation ;
     ],
     [
         sh:path dcat:theme ;
         sh:nodeKind sh:IRI ;
         sh:node :NTISectorThemeRestriction ;
+        sh:message "El valor debe ser un IRI que pertenezca a los sectores primarios definidos en NTI-RISP http://datos.gob.es/kos/sector-publico/sector"@es ;
         sh:severity sh:Violation ;
     ],
     
@@ -70,6 +93,7 @@
     [
         sh:path dcat:keyword ;
         sh:node :MultilingualText_Shape ;
+        sh:message "Cada palabra clave debe ser un literal con etiqueta de idioma válida"@es ;
     ],
     
     # dct:identifier (Recomendado, 0..1)
@@ -145,7 +169,6 @@
         sh:nodeKind sh:BlankNodeOrIRI ;
         sh:class dct:Frequency ;
         sh:node :Frequency_Shape ;
-        sh:severity sh:Violation ;
     ],
     
     # dc:language (Obligatorio, 1..n)
@@ -194,6 +217,7 @@
         sh:path dct:spatial ;
         sh:nodeKind sh:IRI ;
         sh:node :TerritoryRestriction ;
+        sh:message "El valor debe ser un IRI del vocabulario de territorio NTI-RISP http://datos.gob.es/recurso/sector-publico/territorio."@es ;
         sh:severity sh:Violation ;
     ],
     
@@ -201,14 +225,13 @@
     [
         sh:path dct:temporal ;
         sh:minCount 1 ;
-        sh:message "Se recomienda describir un periodo de tiempo que puede ser definido mediante la ontología de Tiempo del W3C (time) "@es ;
+        sh:message "Se recomienda describir un periodo de tiempo que puede ser definido mediante la ontología de Tiempo del W3C: time"@es ;
         sh:severity sh:Warning ;
     ],
     [
         sh:path dct:temporal ;
         sh:class dct:PeriodOfTime ;
         sh:node :PeriodOfTime_Shape ;
-        sh:severity sh:Violation ;
         sh:message "El período temporal debe seguir las especificaciones de dct:PeriodOfTime"@es ;
     ],
     
@@ -229,7 +252,7 @@
     
     # dct:references (Recomendado, 0..n)
     [
-        sh:path dct:valid ;
+        sh:path dct:references ;
         sh:minCount 1 ;
         sh:message "Se recomienda indicar la(s) URI(s) que identifica(n) al recurso relacionado."@es ;
         sh:severity sh:Warning ;
