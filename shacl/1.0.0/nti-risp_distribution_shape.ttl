@@ -59,7 +59,7 @@
         sh:severity sh:Violation ;
     ],
     
-    # dct:title (Recomendado, 0..1)
+    # dct:title (Recomendado, 0..n)
     [
         sh:path dct:title ;
         sh:minCount 1 ;
@@ -68,22 +68,8 @@
     ],
     [
         sh:path dct:title ;
-        sh:nodeKind sh:Literal ;
-        sh:severity sh:Violation
-    ],
-    [
-        sh:path dct:title ;
-        sh:node :NonEmptyLiteral_Shape ;
-        sh:severity sh:Violation
-    ],
-    [
-        sh:path dct:title ;
-        sh:node :LiteralMultilingual_Shape ;
-        sh:severity sh:Violation ;
-    ],
-    [
-        sh:path dct:title ;
-        sh:node :RecommendedMultilingualLiteral_Shape ;
+        sh:node :MultilingualText_Shape ;
+        sh:message "Cada título debe ser un literal con etiqueta de idioma válida"@es ;
         sh:severity sh:Warning ;
     ],
     
@@ -103,16 +89,31 @@
         sh:message "La distribución debe contener al menos un dcat:accessURL."@es ;
     ],
     
-    # dcat:mediaType (Recomendado, 0..1)
+    # dct:format (Obligatorio, 1..1) - según modelo NTI-RISP usa dcat:mediaType
+    [
+        sh:path dct:format ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "Se debe describir el formato en el que se encuentra representado el documento o recurso de información"@es ;
+        sh:severity sh:Violation ;
+    ],
+    [
+        sh:path dct:format ;
+        sh:node :MediaType_Shape ;
+    ],
+    
+    # dcat:mediaType (Recomendado, 0..1) - compatibilidad DCAT
     [
         sh:path dcat:mediaType ;
         sh:minCount 1 ;
-        sh:message "Se recomienda describir el tipo MIME del formato de los datos"@es ;
+        sh:message "Se recomienda describir el tipo MIME del formato de los datos con la estructura: tipo/subtipo"@es ;
         sh:severity sh:Warning ;
     ],
     [
         sh:path dcat:mediaType ;
-        sh:node :MediaType_Shape ;
+        sh:nodeKind sh:Literal ;
+        sh:pattern "^[a-z0-9]+/[a-z0-9.+-]+$" ;
+        sh:message "El tipo MIME debe seguir la estructura: tipo/subtipo"@es ;
         sh:severity sh:Violation ;
     ],
     
@@ -120,7 +121,7 @@
     [
         sh:path dcat:byteSize ;
         sh:minCount 1 ;
-        sh:message "Se recomienda describir el tamaño aproximado en bytes del recurso"@es ;
+        sh:message "Se recomienda describir el tamaño del recurso aproximado en bytes como un número entero no negativo (xsd:nonNegativeInteger)"@es ;
         sh:severity sh:Warning ;
     ],
     [
@@ -128,6 +129,7 @@
         sh:maxCount 1 ;
         sh:nodeKind sh:Literal ;
         sh:datatype xsd:nonNegativeInteger ;
+        sh:message "dcat:byteSize debe ser descrito en bytes como un número entero no negativo (xsd:nonNegativeInteger)"@es ;
         sh:severity sh:Violation ;
     ],
     

@@ -10,12 +10,11 @@
   <dcat:Catalog rdf:about="http://dcat-ap-es.ejemplo.org/catalogo">
     <dct:title xml:lang="es">Catálogo de Datos Abiertos</dct:title>
     <dct:title xml:lang="en">Open Data Catalog</dct:title>
-    <dct:description xml:lang="es">Catálogo de Datos Abiertos que sirve de ejemplo en DCAT-AP-ES.</dct:description>
-    <dct:description xml:lang="en">Open Data Catalogue that serves as an example in DCAT-AP-ES.</dct:description>
+    <dct:description xml:lang="es">Catálogo de Datos Abiertos que sirve de ejemplo en la migración a DCAT-AP-ES.</dct:description>
+    <dct:description xml:lang="en">Open Data Catalogue that serves as an example in DCAT-AP-ES migration.</dct:description>
     <foaf:homepage rdf:resource="http://dcat-ap-es.ejemplo.org"/>
     <dct:publisher rdf:resource="http://datos.gob.es/recurso/sector-publico/org/Organismo/E0DAT0001"/>
     <dcat:themeTaxonomy rdf:resource="http://datos.gob.es/kos/sector-publico/sector"/>
-    <dcat:themeTaxonomy rdf:resource="http://publications.europa.eu/resource/authority/data-theme"/>
     <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-01-01T09:00:00+01:00</dct:issued>
     <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-01-02T12:00:00+01:00</dct:modified>
     <dc:language>es</dc:language>
@@ -34,6 +33,7 @@
         <dcat:theme rdf:resource="http://datos.gob.es/kos/sector-publico/sector/medio-ambiente"/>
         <dct:spatial rdf:resource="http://datos.gob.es/recurso/sector-publico/territorio/Pais/España"/>
 		<dcat:keyword xml:lang="es">estadísticas</dcat:keyword>
+    <dcat:keyword xml:lang="en">statistics</dcat:keyword>
 		<dct:license rdf:resource="http://publications.europa.eu/resource/authority/licence/CC_BY_4_0" />
 		<dc:language>es</dc:language>
 		<dc:language>en</dc:language>
@@ -55,16 +55,17 @@
 			 
         <dcat:distribution>
           <dcat:Distribution rdf:about="http://dcat-ap-es.ejemplo.org/distribucion/dataset-ejemplo-1-CSV">
-			  <dct:title xml:lang="es">Distribución de ejemplo</dct:title>
-			  <dct:title xml:lang="en">Example distribution</dct:title>
-			  <dct:description xml:lang="es">Descripción de un distribución de ejemplo.</dct:description>
-			  <dcat:accessURL rdf:resource="http://dcat-ap-es.ejemplo.org/files/dataset-ejemplo-1.CSV"/>
-			  <dct:format>
-                  <dct:IMT>
-                    <rdf:value>text/csv</rdf:value>
-                    <rdfs:label>CSV</rdfs:label>
-                  </dct:IMT>
-                </dct:format>
+            <dct:title xml:lang="es">Distribución de ejemplo</dct:title>
+            <dct:title xml:lang="en">Example distribution</dct:title>
+            <dct:description xml:lang="es">Descripción de una distribución de ejemplo.</dct:description>
+            <dcat:accessURL rdf:resource="http://dcat-ap-es.ejemplo.org/files/dataset-ejemplo-1.CSV"/>
+            <dct:format>
+              <dct:IMT>
+                <rdf:value>text/csv</rdf:value>
+                <rdfs:label>CSV</rdfs:label>
+              </dct:IMT>
+            </dct:format>
+            <dcat:byteSize rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1024</dcat:byteSize>
           </dcat:Distribution>
         </dcat:distribution>
 
