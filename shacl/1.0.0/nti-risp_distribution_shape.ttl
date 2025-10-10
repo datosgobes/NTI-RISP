@@ -106,7 +106,7 @@
     [
         sh:path dcat:mediaType ;
         sh:minCount 1 ;
-        sh:message "Se recomienda describir el tipo MIME del formato de los datos"@es ;
+        sh:message "Se recomienda describir el tipo MIME del formato de los datos con la estructura: tipo/subtipo"@es ;
         sh:severity sh:Warning ;
     ],
     [
@@ -121,7 +121,7 @@
     [
         sh:path dcat:byteSize ;
         sh:minCount 1 ;
-        sh:message "Se recomienda describir el tamaño aproximado en bytes del recurso"@es ;
+        sh:message "Se recomienda describir el tamaño del recurso aproximado en bytes como un número entero no negativo (xsd:nonNegativeInteger)"@es ;
         sh:severity sh:Warning ;
     ],
     [
@@ -129,6 +129,7 @@
         sh:maxCount 1 ;
         sh:nodeKind sh:Literal ;
         sh:datatype xsd:nonNegativeInteger ;
+        sh:message "dcat:byteSize debe ser descrito en bytes como un número entero no negativo (xsd:nonNegativeInteger)"@es ;
         sh:severity sh:Violation ;
     ],
     
