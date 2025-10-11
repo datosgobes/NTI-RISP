@@ -201,18 +201,9 @@
         sh:path rdfs:label ;
         sh:minCount 1 ;
         sh:nodeKind sh:Literal ;
+        sh:minLength 1 ;
         sh:severity sh:Warning ;
-    ] ;
-    sh:property [
-        sh:path rdfs:label ;
-        sh:node :NonEmptyLiteral_Shape ;
-        sh:severity sh:Violation ;
-    ] ;
-    sh:property [
-        sh:path rdfs:label ;
-        sh:node :LiteralMultilingual_Shape ;
-        sh:severity sh:Warning ;
-        sh:message "Se recomienda que rdfs:label incluya etiqueta de idioma"@es ;
+        sh:message "Se recomienda incluir un rdfs:label descriptivo en time:DurationDescription"@es ;
     ] ;
     # Validación de que al menos una propiedad de tiempo está presente
     sh:or (
