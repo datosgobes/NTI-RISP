@@ -76,17 +76,28 @@
     
     # dcat:accessURL (Obligatorio, 1..1)
     [
-    # dcat:accessURL
-        sh:path dcat:accessURL ;
-        sh:nodeKind sh:IRI ;
-        sh:severity sh:Violation ;
-        sh:message "El valor de dcat:accessURL debe ser un IRI válido para dcat:accessURL."@es ;
-    ],
-    [
         sh:path dcat:accessURL ;
         sh:minCount 1 ;
         sh:severity sh:Violation ;
         sh:message "La distribución debe contener al menos un dcat:accessURL."@es ;
+    ],
+    [
+        sh:path dcat:accessURL ;
+        sh:or (
+            # Caso 1: IRI (referencia a recurso URI)
+            [
+                sh:nodeKind sh:IRI ;
+                sh:message "El valor de dcat:accessURL puede ser un IRI válido"@es ;
+            ]
+            # Caso 2: Literal con datatype xsd:anyURI
+            [
+                sh:nodeKind sh:Literal ;
+                sh:datatype xsd:anyURI ;
+                sh:message "El valor de dcat:accessURL puede ser un literal con tipo xsd:anyURI"@es ;
+            ]
+        ) ;
+        sh:message "El valor de dcat:accessURL debe ser un IRI o un literal xsd:anyURI válido"@es ;
+        sh:severity sh:Violation ;
     ],
     
     # dct:format (Obligatorio, 1..1) - según modelo NTI-RISP usa dcat:mediaType
