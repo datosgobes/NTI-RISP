@@ -170,8 +170,8 @@
         sh:minCount 1 ;
         sh:nodeKind sh:Literal ;
         sh:node :DateOrDateTimeDataType_Shape ;
-        sh:message "La fecha de creación debe ser una fecha válida en formato ISO-8601: YYYY-MM-DDThh:mm:ssTZD"@es .
-        sh:severity sh:Violation
+        sh:message "La fecha de creación del catálogo debe ser una fecha válida en formato ISO-8601: YYYY-MM-DDThh:mm:ssTZD"@es ;
+        sh:severity sh:Violation ;
     ], 
     
     # dct:modified (Obligatorio, 1..1)
@@ -181,8 +181,8 @@
         sh:minCount 1 ;
         sh:nodeKind sh:Literal ;
         sh:node :DateOrDateTimeDataType_Shape ;
-        sh:message "La fecha de última modificación debe ser una fecha válida en formato ISO-8601: YYYY-MM-DDThh:mm:ssTZD"@es .
-        sh:severity sh:Violation
+        sh:message "La fecha de última modificación del catálogo debe ser una fecha válida en formato ISO-8601: YYYY-MM-DDThh:mm:ssTZD"@es ;
+        sh:severity sh:Violation ;
     ], 
     
     # dc:language (Obligatorio, 1..n)

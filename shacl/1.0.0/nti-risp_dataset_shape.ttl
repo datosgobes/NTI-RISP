@@ -136,6 +136,7 @@
         sh:maxCount 1 ;
         sh:nodeKind sh:Literal ;
         sh:node :DateOrDateTimeDataType_Shape ;
+        sh:message "La fecha de creación del dataset debe ser una fecha válida en formato ISO-8601: YYYY-MM-DDThh:mm:ssTZD"@es ;
         sh:severity sh:Violation ;
     ],
     
@@ -151,6 +152,7 @@
         sh:maxCount 1 ;
         sh:nodeKind sh:Literal ;
         sh:node :DateOrDateTimeDataType_Shape ;
+        sh:message "La fecha de última modificación del dataset debe ser una fecha válida en formato ISO-8601: YYYY-MM-DDThh:mm:ssTZD"@es ;
         sh:severity sh:Violation ;
     ],
     
@@ -169,6 +171,7 @@
         sh:nodeKind sh:BlankNodeOrIRI ;
         sh:class dct:Frequency ;
         sh:node :Frequency_Shape ;
+        sh:message "La estructura dct:Frequency no cumple con los requisitos https://datosgobes.github.io/NTI-RISP/#Dataset"@es ;
     ],
     
     # dc:language (Obligatorio, 1..n)
@@ -240,7 +243,7 @@
     [
         sh:path dct:valid ;
         sh:minCount 1 ;
-        sh:message "Se recomienda indicar la fecha de vigencia del recurso con formato ISO8601: YYYY-MM-DD"@es ;
+        sh:message "Se recomienda indicar la fecha de vigencia del recurso con formato ISO8601: YYYY-MM-DD (xsd:date)"@es ;
         sh:severity sh:Warning ;
     ],
     [
