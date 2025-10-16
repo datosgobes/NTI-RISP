@@ -159,7 +159,7 @@
 					<rdfs:label>@@TEXTO-nombre-formato@@</rdfs:label>
 				</dct:IMT> <!-- Formato MIME -->
 			</dct:format>
-			<dcat:byteSize rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">@@NUMERO-bytes@@</dcat:byteSize>
+			<dcat:byteSize rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">@@NUMERO-bytes@@</dcat:byteSize>
 			<dct:relation>
 			  <rdf:Description>
 				<foaf:page rdf:resource="@@URL-documento@@" />
@@ -175,7 +175,7 @@
 			<dct:title xml:lang="es">@@TEXTO-nombre-distribucionB@@</dct:title>
 			<dcat:accessURL rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">@@URL-acceso@@</dcat:accessURL>
 			<dcat:mediaType>@@tipo-mine-formato@@</dcat:mediaType>
-			<dcat:byteSize rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">@@NUMERO-bytes@@</dcat:byteSize>
+			<dcat:byteSize rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">@@NUMERO-bytes@@</dcat:byteSize>
 			<dct:relation>
 			  <rdf:Description>
 				<foaf:page rdf:resource="@@URL-documento@@" />

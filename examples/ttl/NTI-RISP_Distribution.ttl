@@ -19,4 +19,4 @@
     foaf:page <http://www.catastro.minhap.es/ayuda/lang/castellano/ayuda_descarga_shape.htm>
   ] ;
   dcat:accessURL "https://www.sedecatastro.gob.es/CYCTitular/OVCAccTit .aspx?Dest=19"^^xsd:anyURI ;
-  dcat:byteSize 31457280 .
+  dcat:byteSize "31457280"^^xsd:nonNegativeInteger .

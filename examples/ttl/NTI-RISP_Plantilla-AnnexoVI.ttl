@@ -73,7 +73,7 @@
       rdf:value "@@tipo-mine-formato@@" ;
       rdfs:label "@@TEXTO-nombre-formato@@"
     ] ;
-    dcat:byteSize @@NUMERO-bytes@@ ;
+    dcat:byteSize "@@NUMERO-bytes@@"^^xsd:nonNegativeInteger ;
     dc:relation [ foaf:page <http://njh.me/@@URL-documento@@> ]
   ], [
     a dcat:Distribution ;
@@ -81,6 +81,6 @@
     dc:title "@@TEXTO-nombre-distribucionA@@"@es, "@@TEXTO-nombre-distribucionB@@"@es ;
     dcat:accessURL "@@URL-acceso@@"^^xsd:anyURI ;
     dcat:mediaType "@@tipo-mine-formato@@" ;
-    dcat:byteSize @@NUMERO-bytes@@ ;
+    dcat:byteSize "@@NUMERO-bytes@@"^^xsd:nonNegativeInteger ;
     dc:relation [ foaf:page <http://njh.me/@@URL-documento@@> ]
   ] .
