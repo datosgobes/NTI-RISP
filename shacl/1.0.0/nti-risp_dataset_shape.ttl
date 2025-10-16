@@ -179,6 +179,7 @@
         sh:path dc:language ;
         sh:minCount 1 ;
         sh:node :LanguageRestriction_Shape ;
+        sh:message "El conjunto de datos debe estar disponible en al menos un idioma"@es ;
         sh:severity sh:Violation ;
     ],
     
