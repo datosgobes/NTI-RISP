@@ -1,22 +1,39 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix : <http://datos.gob.es/nti-risp#> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix cc: <http://creativecommons.org/ns#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dct: <http://purl.org/dc/terms/> .
-@prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <http://schema.org/> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix time: <http://www.w3.org/2006/time#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcatap: <http://data.europa.eu/r5r/> .
+@prefix ntirisp: <https://datosgobes.github.io/NTI-RISP/#> .
 
-<http://datos.gob.es/nti-risp/common_shapes>
+<https://datosgobes.github.io/NTI-RISP/releases/1.0.0/shacl/nti-risp_common_shapes.ttl>
+    rdf:type owl:Ontology ;
+    rdfs:label "Restricciones comunes NTI-RISP (2013)."@es ;
+    rdfs:label "Common restrictions for NTI-RISP (2013)"@en ;
+    dcat:downloadURL <https://datosgobes.github.io/NTI-RISP/releases/1.0.0/shacl/shacl_distribution_shape.ttl> ;
     dct:format <http://publications.europa.eu/resource/authority/file-type/RDF_TURTLE> ;
     dct:conformsTo <https://www.w3.org/TR/shacl> ;
     dct:description "Este documento especifica restricciones comunes utilizadas en varios shapes del modelo de metadatos NTI-RISP (2013)."@es ;
-    owl:versionInfo "1.0.0" .
+    dct:description "This file specifies common restrictions used in various shapes of the NTI-RISP metadata model (2013)."@en ;
+    owl:versionInfo "1.0.0" ;
+    dct:modified "2024-10-17"^^xsd:date ;
+    dct:publisher <http://datos.gob.es/recurso/sector-publico/org/Organismo/E0DAT0001> ;
+    cc:attributionURL <https://datos.gob.es/> ;
+    dcatap:availability <http://data.europa.eu/r5r/stable> ;
+    foaf:homepage <https://datosgobes.github.io/NTI-RISP/> .
 
-:DateOrDateTimeDataType_Shape
+ntirisp:DateOrDateTimeDataType_Shape
     a sh:NodeShape ;
     rdfs:comment "Restricción para formatos de fecha ISO-8601"@es ;
     sh:or (
@@ -34,7 +51,7 @@
     sh:message "El valor debe ser una fecha válida en formato ISO-8601: YYYY-MM-DDThh:mm:ssTZD"@es .
 
 # Shape modular para texto multilingüe
-:MultilingualText_Shape
+ntirisp:MultilingualText_Shape
     a sh:NodeShape ;
     rdfs:comment "Restricción modular para literales de texto con etiquetas de idiomas"@es ;
     sh:nodeKind sh:Literal ;
@@ -43,14 +60,14 @@
     sh:minLength 1 ;
     sh:message "El valor debe ser un literal con etiqueta de idioma válida (es, ca, eu, ga, en, fr) y no puede estar vacío"@es .
 
-:NonEmptyLiteral_Shape
+ntirisp:NonEmptyLiteral_Shape
     a sh:NodeShape ;
     rdfs:comment "Restricción para literales no vacíos"@es ;
     sh:minLength 1 ;
     sh:message "El valor no puede estar vacío"@es .
 
 # Shape para validar colecciones de texto multilingüe (requiere al menos español)
-:MultilingualTextCollection_Shape
+ntirisp:MultilingualTextCollection_Shape
     a sh:NodeShape ;
     rdfs:comment "Restricción para colecciones de literales multilingües con al menos uno en español"@es ;
     # Cada valor individual debe ser un literal con etiqueta de idioma
@@ -58,7 +75,7 @@
         sh:path [ sh:zeroOrMorePath rdf:rest ] ;
         sh:property [
             sh:path rdf:first ;
-            sh:node :MultilingualText_Shape ;
+            sh:node ntirisp:MultilingualText_Shape ;
         ]
     ] ;
     # Al menos un valor debe estar en español
@@ -70,14 +87,14 @@
     ] ;
     sh:message "Debe haber al menos un valor en español y todos los valores deben tener etiquetas de idioma válidas"@es .
 
-:LiteralMultilingual_Shape
+ntirisp:LiteralMultilingual_Shape
     a sh:NodeShape ;
     rdfs:comment "Restricción para literales multilingües"@es ;
     sh:datatype rdf:langString ;
     sh:languageIn ("es" "ca" "eu" "ga" "en" "fr") ;
     sh:message "El valor debe ser un literal con etiqueta de idioma válida (es, ca, eu, ga, en, fr)"@es .
 
-:RecommendedMultilingualLiteral_Shape
+ntirisp:RecommendedMultilingualLiteral_Shape
     a sh:NodeShape ;
     rdfs:comment "Recomendación para literales en múltiples idiomas"@es ;
     sh:or (
@@ -104,7 +121,7 @@
     ) ;
     sh:message "Se recomienda proporcionar valores en otros idiomas además del español"@es .
 
-:NonLiteralMultilingual_Shape
+ntirisp:NonLiteralMultilingual_Shape
     a sh:NodeShape ;
     rdfs:comment "Restricción para literales sin etiqueta de idioma"@es ;
     sh:not [
@@ -112,14 +129,14 @@
     ] ;
     sh:message "El valor no debe incluir etiqueta de idioma"@es .
 
-:LanguageRestriction_Shape
+ntirisp:LanguageRestriction_Shape
     a sh:NodeShape ;
     rdfs:comment "Restricción para valores de idioma permitidos en dc:language"@es ;
     sh:nodeKind sh:Literal ;
     sh:in ("es" "ga" "ca" "eu" "en" "fr") ;
     sh:message "El valor de dc:language debe ser uno de los idiomas permitidos: 'es', 'ga', 'ca', 'eu', 'en', 'fr'"@es .
 
-:Frequency_Shape
+ntirisp:Frequency_Shape
     a sh:NodeShape ;
     rdfs:comment "Validación para estructuras dct:Frequency usadas en dct:accrualPeriodicity"@es ;
     sh:or (
@@ -131,7 +148,7 @@
                 sh:maxCount 1 ;
                 sh:nodeKind sh:BlankNodeOrIRI ;
                 sh:class time:DurationDescription ;
-                sh:node :TimeDurationDescription_Shape ;
+                sh:node ntirisp:TimeDurationDescription_Shape ;
                 sh:message "dct:Frequency debe contener exactamente un rdf:value con una estructura time:DurationDescription válida"@es ;
             ]
         ]
@@ -158,7 +175,7 @@
     ) ;
     sh:message "La estructura dct:Frequency no cumple con los requisitos"@es .
 
-:TimeDurationDescription_Shape
+ntirisp:TimeDurationDescription_Shape
     a sh:NodeShape ;
     rdfs:comment "Validación para estructuras time:DurationDescription usadas en dct:accrualPeriodicity"@es ;
     sh:property [
@@ -217,7 +234,7 @@
     sh:message "Una estructura time:DurationDescription debe incluir al menos una propiedad de tiempo (years, months, days, etc.)"@es .
 
 # Shape para el período de tiempo con soporte para múltiples sintaxis
-:PeriodOfTime_Shape
+ntirisp:PeriodOfTime_Shape
     a sh:NodeShape ;
     rdfs:comment "Validación para estructuras dct:PeriodOfTime que definen un intervalo temporal. Solo se permiten propiedades dcat:* o time:*, NO schema:*"@es ;
     
@@ -282,7 +299,7 @@
     sh:targetClass time:Interval .
 
 # Shape para validar estructuras dct:IMT (formatos MIME)
-:MediaType_Shape
+ntirisp:MediaType_Shape
     a sh:NodeShape ;
     rdfs:comment "Validación para estructuras dct:IMT (IANA media type)"@es ;
     sh:class dct:IMT ;
@@ -301,7 +318,7 @@
         sh:severity sh:Warning ;
     ] .
 
-:DIR3OrganismRestriction
+ntirisp:DIR3OrganismRestriction
     a sh:NodeShape ;
     rdfs:comment "Restricción de organismo del sector público según codificación DIR3"@es ;
     rdfs:label "Restricción de organismo del sector público"@es ;

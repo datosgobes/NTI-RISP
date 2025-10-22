@@ -1,6 +1,6 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix : <http://datos.gob.es/nti-risp#> .
 @prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix cc: <http://creativecommons.org/ns#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dct: <http://purl.org/dc/terms/> .
@@ -14,20 +14,39 @@
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcatap: <http://data.europa.eu/r5r/> .
+@prefix ntirisp: <https://datosgobes.github.io/NTI-RISP/#> .
 
-<http://datos.gob.es/nti-risp/shacl_dataset_shape>
+<https://datosgobes.github.io/NTI-RISP/releases/1.0.0/shacl/nti-risp_dataset_shape.ttl>
+    rdf:type owl:Ontology ;
+    rdfs:label "Restricciones para los conjuntos de datos NTI-RISP (2013)"@es ;
+    rdfs:label "Datasets restrictions for NTI-RISP (2013)"@en ;
+    dcat:downloadURL <https://datosgobes.github.io/NTI-RISP/releases/1.0.0/shacl/shacl_distribution_shape.ttl> ;
     dct:format <http://publications.europa.eu/resource/authority/file-type/RDF_TURTLE> ;
     dct:conformsTo <https://www.w3.org/TR/shacl> ;
-    dct:description "Este documento especifica las restricciones en propiedades y clases expresadas por el modelo de metadatos NTI-RISP (2013) en SHACL para conjuntos de datos."@es ;
+    dct:description "Este archivo incluye las restricciones SHACL para las propiedades y clases relacionadas con conjuntos de datos en el perfil de aplicación NTI-RISP (2013)."@es ;
+    dct:description "This file includes SHACL restrictions for properties and classes related to datasets in the NTI-RISP application profile (2013)."@en ;
     owl:versionInfo "1.0.0" ;
+    dct:modified "2024-10-17"^^xsd:date ;
+    dct:publisher <http://datos.gob.es/recurso/sector-publico/org/Organismo/E0DAT0001> ;
+    cc:attributionURL <https://datos.gob.es/> ;
+    dcatap:availability <http://data.europa.eu/r5r/stable> ;
+    foaf:homepage <https://datosgobes.github.io/NTI-RISP/> ;
+    rdfs:seeAlso <https://datosgobes.github.io/NTI-RISP/#Dataset> ;
     rdfs:comment """
-        Este archivo SHACL debe importar las siguientes dependencias adicionales para funcionar correctamente:
-            - nti-risp_common_shapes.ttl
-            - nti-risp_vocabularies.shape.ttl
-        Asegúrese de que estén disponibles e importados para una validación completa.
-    """@es .
+        Este archivo requiere importar las siguientes dependencias adicionales para funcionar correctamente:
+        - shacl_common_shapes.ttl
+        - shacl_mdr-vocabularies.shape.ttl
+        Asegúrese de que estén disponibles e importadas para una validación completa.
+    """@es ;
+    rdfs:comment """
+        This file requires importing the following additional dependencies to work properly:
+        - shacl_common_shapes.ttl
+        - shacl_mdr-vocabularies.shape.ttl
+        Make sure they are available and imported for full validation.
+    """@en .
 
-:Dataset_Shape
+ntirisp:Dataset_Shape
     a sh:NodeShape ;
     sh:name "Dataset"@en ;
     sh:property 
@@ -45,7 +64,7 @@
     ],
     [
         sh:path dct:title ;
-        sh:node :MultilingualText_Shape ;
+        sh:node ntirisp:MultilingualText_Shape ;
         sh:message "Cada título debe ser un literal con etiqueta de idioma válida"@es ;
     ],
 
@@ -63,7 +82,7 @@
     ],
     [
         sh:path dct:description ;
-        sh:node :MultilingualText_Shape ;
+        sh:node ntirisp:MultilingualText_Shape ;
         sh:message "Cada descripción debe ser un literal con etiqueta de idioma válida"@es ;
     ],
     
@@ -77,7 +96,7 @@
     [
         sh:path dcat:theme ;
         sh:nodeKind sh:IRI ;
-        sh:node :NTISectorThemeRestriction ;
+        sh:node ntirisp:NTISectorThemeRestriction ;
         sh:message "El valor debe ser un IRI que pertenezca a los sectores primarios definidos en NTI-RISP http://datos.gob.es/kos/sector-publico/sector"@es ;
         sh:severity sh:Violation ;
     ],
@@ -92,7 +111,7 @@
     ],
     [
         sh:path dcat:keyword ;
-        sh:node :MultilingualText_Shape ;
+        sh:node ntirisp:MultilingualText_Shape ;
         sh:message "Cada palabra clave debe ser un literal con etiqueta de idioma válida"@es ;
     ],
     
@@ -135,7 +154,7 @@
         sh:path dct:issued ;
         sh:maxCount 1 ;
         sh:nodeKind sh:Literal ;
-        sh:node :DateOrDateTimeDataType_Shape ;
+        sh:node ntirisp:DateOrDateTimeDataType_Shape ;
         sh:message "La fecha de creación del dataset debe ser una fecha válida en formato ISO-8601: YYYY-MM-DDThh:mm:ssTZD"@es ;
         sh:severity sh:Violation ;
     ],
@@ -151,7 +170,7 @@
         sh:path dct:modified ;
         sh:maxCount 1 ;
         sh:nodeKind sh:Literal ;
-        sh:node :DateOrDateTimeDataType_Shape ;
+        sh:node ntirisp:DateOrDateTimeDataType_Shape ;
         sh:message "La fecha de última modificación del dataset debe ser una fecha válida en formato ISO-8601: YYYY-MM-DDThh:mm:ssTZD"@es ;
         sh:severity sh:Violation ;
     ],
@@ -170,7 +189,7 @@
         # Estructura compleja con dct:Frequency
         sh:nodeKind sh:BlankNodeOrIRI ;
         sh:class dct:Frequency ;
-        sh:node :Frequency_Shape ;
+        sh:node ntirisp:Frequency_Shape ;
         sh:message "La estructura dct:Frequency no cumple con los requisitos https://datosgobes.github.io/NTI-RISP/#Dataset"@es ;
     ],
     
@@ -178,7 +197,7 @@
     [
         sh:path dc:language ;
         sh:minCount 1 ;
-        sh:node :LanguageRestriction_Shape ;
+        sh:node ntirisp:LanguageRestriction_Shape ;
         sh:message "El conjunto de datos debe estar disponible en al menos un idioma"@es ;
         sh:severity sh:Violation ;
     ],
@@ -192,7 +211,7 @@
     ],
     [
         sh:path dct:publisher ;
-        sh:node :DIR3OrganismRestriction ;
+        sh:node ntirisp:DIR3OrganismRestriction ;
         sh:message "El valor debe ser un IRI del directorio de organismos DIR3 con formato http://datos.gob.es/recurso/sector-publico/org/Organismo/{ID}, donde ID es un código alfanumérico de 9 caracteres que puede comenzar con E (Administración General del Estado), A (Administración Autonómica), L (Administración Local), P (Entidades privadas), U (Universidades), etc."@es ;
         sh:severity sh:Violation ;
     ],
@@ -221,7 +240,7 @@
     [
         sh:path dct:spatial ;
         sh:nodeKind sh:IRI ;
-        sh:node :TerritoryRestriction ;
+        sh:node ntirisp:TerritoryRestriction ;
         sh:message "El valor debe ser un IRI del vocabulario de territorio NTI-RISP http://datos.gob.es/recurso/sector-publico/territorio."@es ;
         sh:severity sh:Violation ;
     ],
@@ -236,7 +255,7 @@
     [
         sh:path dct:temporal ;
         sh:class dct:PeriodOfTime ;
-        sh:node :PeriodOfTime_Shape ;
+        sh:node ntirisp:PeriodOfTime_Shape ;
         sh:message "El período temporal debe seguir las especificaciones de dct:PeriodOfTime"@es ;
     ],
     

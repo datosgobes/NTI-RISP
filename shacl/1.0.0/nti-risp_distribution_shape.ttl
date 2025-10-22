@@ -1,6 +1,6 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix : <http://datos.gob.es/nti-risp#> .
 @prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix cc: <http://creativecommons.org/ns#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dct: <http://purl.org/dc/terms/> .
@@ -14,20 +14,39 @@
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcatap: <http://data.europa.eu/r5r/> .
+@prefix ntirisp: <https://datosgobes.github.io/NTI-RISP/#> .
 
-<http://datos.gob.es/nti-risp/shacl_distribution_shape>
+<https://datosgobes.github.io/NTI-RISP/releases/1.0.0/shacl/nti-risp_distribution_shape.ttl>
+    rdf:type owl:Ontology ;
+    rdfs:label "Restricciones para las distribuciones NTI-RISP (2013)"@es ;
+    rdfs:label "Distributions restrictions for NTI-RISP (2013)"@en ;
+    dcat:downloadURL <https://datosgobes.github.io/NTI-RISP/releases/1.0.0/shacl/shacl_distribution_shape.ttl> ;
     dct:format <http://publications.europa.eu/resource/authority/file-type/RDF_TURTLE> ;
     dct:conformsTo <https://www.w3.org/TR/shacl> ;
-    dct:description "Este documento especifica las restricciones en propiedades y clases expresadas por el modelo de metadatos NTI-RISP (2013) en SHACL para distribuciones."@es ;
+    dct:description "Este archivo incluye las restricciones SHACL para las propiedades y clases relacionadas con distribuciones en el perfil de aplicación NTI-RISP (2013)."@es ;
+    dct:description "This file includes SHACL restrictions for properties and classes related to distributions in the NTI-RISP application profile (2013)."@en ;
     owl:versionInfo "1.0.0" ;
+    dct:modified "2024-10-17"^^xsd:date ;
+    dct:publisher <http://datos.gob.es/recurso/sector-publico/org/Organismo/E0DAT0001> ;
+    cc:attributionURL <https://datos.gob.es/> ;
+    dcatap:availability <http://data.europa.eu/r5r/stable> ;
+    foaf:homepage <https://datosgobes.github.io/NTI-RISP/> ;
+    rdfs:seeAlso <https://datosgobes.github.io/NTI-RISP/#Distribution> ;
     rdfs:comment """
-        Este archivo SHACL debe importar las siguientes dependencias adicionales para funcionar correctamente:
-            - nti-risp_common_shapes.ttl
-            - nti-risp_vocabularies.shape.ttl
-        Asegúrese de que estén disponibles e importados para una validación completa.
-    """@es .
+        Este archivo requiere importar las siguientes dependencias adicionales para funcionar correctamente:
+        - shacl_common_shapes.ttl
+        - shacl_mdr-vocabularies.shape.ttl
+        Asegúrese de que estén disponibles e importadas para una validación completa.
+    """@es ;
+    rdfs:comment """
+        This file requires importing the following additional dependencies to work properly:
+        - shacl_common_shapes.ttl
+        - shacl_mdr-vocabularies.shape.ttl
+        Make sure they are available and imported for full validation.
+    """@en .
 
-:Distribution_Shape
+ntirisp:Distribution_Shape
     a sh:NodeShape ;
     sh:name "Distribution"@en ;
     sh:property 
@@ -68,7 +87,7 @@
     ],
     [
         sh:path dct:title ;
-        sh:node :MultilingualText_Shape ;
+        sh:node ntirisp:MultilingualText_Shape ;
         sh:message "Cada título debe ser un literal con etiqueta de idioma válida"@es ;
         sh:severity sh:Warning ;
     ],
@@ -110,7 +129,7 @@
     ],
     [
         sh:path dct:format ;
-        sh:node :MediaType_Shape ;
+        sh:node ntirisp:MediaType_Shape ;
     ],
     
     # dcat:mediaType (Recomendado, 0..1) - compatibilidad DCAT
