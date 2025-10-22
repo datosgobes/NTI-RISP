@@ -23,7 +23,7 @@
     </dct:relation>
 
     <dcat:accessURL rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.sedecatastro.gob.es/CYCTitular/OVCAccTit .aspx?Dest=19</dcat:accessURL>
-    <dcat:byteSize rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">31457280</dcat:byteSize>
+    <dcat:byteSize rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">31457280</dcat:byteSize>
   </dcat:Distribution>
 
 </rdf:RDF>

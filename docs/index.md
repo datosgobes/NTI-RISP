@@ -140,9 +140,9 @@ A continuación, se detalla la serie de propiedades que deben ajustarse utilizan
 
 | **Propiedad** | **Clase** | **Vocabulario** | **URI del vocabulario** |
 | --- | --- | --- | --- |
-| [**dct:spatial**](http://purl.org/dc/terms/spatial) | [`dcat:Catalog`](#Catalog)<br>[`dcat:Dataset`](#Dataset) | [Taxonomía de territorio NTI-RISP](#vocab-spatial) | `http://datos.gob.es/es/recurso/sector-publico/territorio` |
-| [**dcat:theme**](http://www.w3.org/ns/dcat#theme) | [`dcat:Dataset`](#Dataset) | [Taxonomía de sectores primarios NTI-RISP](#vocab-nti-themes) | `http://datos.gob.es/es/recurso/sector-publico/sector` |
-| [**dcat:themeTaxonomy**](http://www.w3.org/ns/dcat#themeTaxonomy) | [`dcat:Catalog`](#Catalog) | [Taxonomía de sectores primarios NTI-RISP](#vocab-nti-themes) | `http://datos.gob.es/kos/sector-publico/sector` | 
+| [**dct:spatial**](http://purl.org/dc/terms/spatial) | [dcat:Catalog](#Catalog)<br>[dcat:Dataset](#Dataset) | [Taxonomía de territorio NTI-RISP](#vocab-spatial) | `http://datos.gob.es/es/recurso/sector-publico/territorio` |
+| [**dcat:theme**](http://www.w3.org/ns/dcat#theme) | [dcat:Dataset](#Dataset) | [Taxonomía de sectores primarios NTI-RISP](#vocab-nti-themes) | `http://datos.gob.es/es/recurso/sector-publico/sector` |
+| [**dcat:themeTaxonomy**](http://www.w3.org/ns/dcat#themeTaxonomy) | [dcat:Catalog](#Catalog) | [Taxonomía de sectores primarios NTI-RISP](#vocab-nti-themes) | `http://datos.gob.es/kos/sector-publico/sector` | 
 
 
 # Relación de metadatos del modelo NTI-RISP
