@@ -190,7 +190,7 @@ ntirisp:Catalog_Shape
         sh:path dc:language ;
         sh:minCount 1 ;
         sh:node ntirisp:LanguageRestriction_Shape ;
-        sh:message "El catálogo debe estar disponible en al menos un idioma"@es ;
+        sh:message "El conjunto de datos debe estar disponible en al menos un idioma usando valores normalizados de etiquetas para identificar idiomas definidos en el RFC 5646 como 'es' o 'en'"@es ;
         sh:severity sh:Violation ;
     ],
     

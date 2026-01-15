@@ -46,40 +46,40 @@ El modelo de la NTI-RISP se representa a continuación como un diagrama UML que 
 ```mermaid
 classDiagram
     class dcatCatalog {
-        dct:title [1..*]
-        dct:description [1..*]
+        dct:title [1..n]
+        dct:description [1..n]
         dct:extent [0..1]
         dct:identifier [0..1]
         dct:issued
         dct:modified
         foaf:homepage
-        dc:language [1..*]
+        dc:language [1..n]
         dct:license [0..1]
     }
 
     class dcatDataset {
-        dct:title [1..*]
-        dct:description [1..*]
-        dcat:keyword [0..*]
+        dct:title [1..n]
+        dct:description [1..n]
+        dcat:keyword [0..n]
         dct:identifier [0..1]
         dct:issued [0..1]
         dct:modified [0..1]
         dct:accrualPeriodicity [0..1]
-        dc:language [0..*]
+        dc:language [0..n]
         dct:license [0..1]
-        dct:temporal [0..*]
+        dct:temporal [0..n]
         dct:valid [0..1]
-        dct:references [0..*]
-        dct:conformsTo [0..*]
+        dct:references [0..n]
+        dct:conformsTo [0..n]
     }
 
     class dcatDistribution {
         dct:identifier [0..1]
-        dct:title [0..*]
+        dct:title [0..n]
         dcat:accessURL
         dcat:mediaType
         dcat:byteSize [0..1]
-        dct:relation [0..*]
+        dct:relation [0..n]
     }
 
     class Organization {
@@ -98,13 +98,13 @@ classDiagram
         +sector : skos:Concept
     }
 
-    dcatCatalog "1" -- "1..*" dcatDataset : dcat_dataset
-    dcatDataset "1" -- "1..*" dcatDistribution : dcat_distribution
-    dcatCatalog "1..*" -- "1" ThemeTaxonomy : dcat_themeTaxonomy
-    ThemeTaxonomy "1..*" -- "1..*" Theme : skos_inScheme
-    dcatDataset "1..*" -- "1..*" Theme : dcat_theme
-    dcatDataset "1" -- "1..*" Organization : dct_publisher
-    dcatDataset "0..*" -- "0..*" GeographicResource : dct_spatial
+    dcatCatalog "1" -- "1..n" dcatDataset : dcat_dataset
+    dcatDataset "1" -- "1..n" dcatDistribution : dcat_distribution
+    dcatCatalog "1..n" -- "1" ThemeTaxonomy : dcat_themeTaxonomy
+    ThemeTaxonomy "1..n" -- "1..n" Theme : skos_inScheme
+    dcatDataset "1..n" -- "1..n" Theme : dcat_theme
+    dcatDataset "1" -- "1..n" Organization : dct_publisher
+    dcatDataset "0..n" -- "0..n" GeographicResource : dct_spatial
 ```
 
 ## Clases de la NTI-RISP {#nti-risp-entities}
