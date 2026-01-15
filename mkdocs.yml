@@ -8,9 +8,10 @@ edit_uri: edit/main/docs/
 site_dir: dist
 
 validation:
-  absolute_links: ignore
-  unrecognized_links: ignore
-  anchors: ignore
+  links:
+    absolute_links: relative_to_docs
+    unrecognized_links: warn
+    anchors: ignore
 
 nav:
   - Guía técnica NTI-RISP: index.md
@@ -137,9 +138,9 @@ extra:
       icon: fontawesome/solid/globe
       link: https://datos.gob.es
   consent:
-      title: Información importante sobre Cookies
-      description: >- 
-        En esta página web usamos cookies propias y de terceros con fines técnicos y de personalización para el funcionamiento del sitio web o la prestación de servicios expresamente solicitados por el usuario. No recaba ni cede datos de carácter personal de los usuarios sin su conocimiento. Sin embargo, puede contener enlaces a sitios web de terceros con políticas de privacidad ajenas a la de datos.gob.es que usted podrá decidir si acepta o no cuando acceda a ellos. Encontrará más información sobre las cookies utilizadas en nuestra <a href="https://datos.gob.es/es/politica-de-cookies">Documentación de cookies</a>
+       title: Información importante sobre Cookies
+       description: >- 
+         En esta página web usamos cookies propias y de terceros con fines técnicos y de personalización para el funcionamiento del sitio web o la prestación de servicios expresamente solicitados por el usuario. No recaba ni cede datos de carácter personal de los usuarios sin su conocimiento. Sin embargo, puede contener enlaces a sitios web de terceros con políticas de privacidad ajenas a la de datos.gob.es que usted podrá decidir si acepta o no cuando acceda a ellos. Encontrará más información sobre las cookies utilizadas en nuestra <a href="https://datos.gob.es/es/politica-de-cookies">Documentación de cookies</a>
   mkdocs_hooks:
     pdf_source: refs/nti-risp
     pdf_dest: download/pdf
@@ -176,7 +177,7 @@ plugins:
   - mkdocstrings:
       handlers:
         python:
-          import:
+          inventories:
             - https://docs.python.org/3/objects.inv
             - https://installer.readthedocs.io/en/stable/objects.inv
           options:
@@ -289,6 +290,7 @@ dcatapes:
       latest_published_version: Última versión publicada
       latest_editors_draft: Último borrador del editor
       history: Historial
+      date_published: Fecha de referencia
       editors: Editores
       author: Autor
       feedback: Retroalimentación
@@ -441,6 +443,7 @@ dcatapes:
       latest_published_version: Latest Published Version
       latest_editors_draft: Latest Editor's Draft
       history: History
+      date_published: Reference date
       editors: Editors
       author: Author
       feedback: Feedback
@@ -513,7 +516,6 @@ dcatapes:
         title: Download as PDF
         href: 
           index: https://datosgobes.github.io/NTI-RISP/download/pdf/guia_nti_pdf_reutilizacion_recursos_informacion_2aed.pdf
-          index: https://datosgobes.github.io/NTI-RISP/download/pdf/guia_nti_pdf_reutilizacion_recursos_informacion_2aed.pdf
       badges:
         must:
           name: Mandatory
@@ -534,4 +536,4 @@ dcatapes:
           name: Semantic
           title: These conventions ensure consistency in the description of resources, guaranteeing that metadata is semantically accurate and consistent.
   # Add more languages here
-    
+
