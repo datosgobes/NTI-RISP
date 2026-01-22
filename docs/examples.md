@@ -86,7 +86,7 @@ Este ejemplo es útil como plantilla porque:
     --8<-- "examples/ttl/E_NTI-RISP_Catalog.ttl"
     ```
 
-# Catálogo - Clase: [`dcat:Catalog`](/#catalogo_-_clase_dcatcatalog_-_obligatorio)
+# Catálogo - Clase: [`dcat:Catalog`](index.md#Catalog)
 ## Catálogo - Propiedades
 Este ejemplo ilustra la creación de un catálogo de datos conforme al perfil NTI-RISP, mostrando tanto las propiedades esenciales como las complementarias.
 
@@ -117,7 +117,7 @@ Para mayor riqueza informativa, el catálogo también incluye:
     --8<-- "examples/ttl/NTI-RISP_Catalog.ttl"
     ```
 
-# Conjunto de datos - Clase: [`dcat:Dataset`](/#distribucion_-_clase_dcatdistribution_-_obligatorio)
+# Conjunto de datos - Clase: [`dcat:Dataset`](index.md#Dataset)
 ## Conjunto de datos - Propiedades
 Este ejemplo muestra un conjunto de datos completo según la norma NTI-RISP, describiendo información catastral disponible en España.
 
@@ -149,7 +149,7 @@ El conjunto de datos incluye información complementaria relevante:
     --8<-- "examples/ttl/NTI-RISP_Dataset.ttl"
     ```
 
-# Distribución - Clase: [`dcat:Distribution`](/#distribucion_-_clase_dcatdistribution_-_obligatorio)
+# Distribución - Clase: [`dcat:Distribution`](index.md#Distribution)
 ## Distribución - Propiedades
 Este ejemplo muestra la forma correcta de documentar una distribución del conjunto de datos según la norma NTI-RISP.
 
